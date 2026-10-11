@@ -1,0 +1,311 @@
+{
+  "label": "baseline-A",
+  "n_prompts": 36,
+  "total_tokens": 738909,
+  "prompt_token_counts": [
+    20524,
+    20524,
+    20524,
+    20523,
+    20525,
+    20526,
+    20526,
+    20527,
+    20525,
+    20526,
+    20524,
+    20526,
+    20526,
+    20523,
+    20526,
+    20526,
+    20525,
+    20526,
+    20526,
+    20524,
+    20524,
+    20525,
+    20525,
+    20526,
+    20526,
+    20525,
+    20527,
+    20525,
+    20526,
+    20526,
+    20525,
+    20527,
+    20523,
+    20526,
+    20526,
+    20525
+  ],
+  "runs": [
+    [
+      {
+        "id": 0,
+        "elapsed": 3.2863316535949707,
+        "correct": true,
+        "answer": "HBRPOIG8",
+        "expected": "HBRPOIG8"
+      },
+      {
+        "id": 1,
+        "elapsed": 3.292757272720337,
+        "correct": true,
+        "answer": "MD7UINGW",
+        "expected": "MD7UINGW"
+      },
+      {
+        "id": 2,
+        "elapsed": 3.2698473930358887,
+        "correct": true,
+        "answer": "RDPI4RGV",
+        "expected": "RDPI4RGV"
+      },
+      {
+        "id": 3,
+        "elapsed": 3.249666929244995,
+        "correct": true,
+        "answer": "KXLNAXOA",
+        "expected": "KXLNAXOA"
+      },
+      {
+        "id": 4,
+        "elapsed": 3.259202003479004,
+        "correct": true,
+        "answer": "7YRBJINU",
+        "expected": "7YRBJINU"
+      },
+      {
+        "id": 5,
+        "elapsed": 3.3057327270507812,
+        "correct": true,
+        "answer": "3MK1ID4E",
+        "expected": "3MK1ID4E"
+      },
+      {
+        "id": 6,
+        "elapsed": 3.316118001937866,
+        "correct": true,
+        "answer": "2PYLFK5I",
+        "expected": "2PYLFK5I"
+      },
+      {
+        "id": 7,
+        "elapsed": 3.33613920211792,
+        "correct": true,
+        "answer": "UH856XOY",
+        "expected": "UH856XOY"
+      },
+      {
+        "id": 8,
+        "elapsed": 3.2739381790161133,
+        "correct": true,
+        "answer": "ZOE7ON36",
+        "expected": "ZOE7ON36"
+      },
+      {
+        "id": 9,
+        "elapsed": 3.2698657512664795,
+        "correct": true,
+        "answer": "1FX87PNJ",
+        "expected": "1FX87PNJ"
+      },
+      {
+        "id": 10,
+        "elapsed": 3.2965152263641357,
+        "correct": true,
+        "answer": "XRTOOEFQ",
+        "expected": "XRTOOEFQ"
+      },
+      {
+        "id": 11,
+        "elapsed": 3.323922634124756,
+        "correct": true,
+        "answer": "EJ6UZUYT",
+        "expected": "EJ6UZUYT"
+      }
+    ],
+    [
+      {
+        "id": 0,
+        "elapsed": 3.269432306289673,
+        "correct": true,
+        "answer": "HBRPOIG8",
+        "expected": "HBRPOIG8"
+      },
+      {
+        "id": 1,
+        "elapsed": 3.3011062145233154,
+        "correct": true,
+        "answer": "MD7UINGW",
+        "expected": "MD7UINGW"
+      },
+      {
+        "id": 2,
+        "elapsed": 3.273935079574585,
+        "correct": true,
+        "answer": "RDPI4RGV",
+        "expected": "RDPI4RGV"
+      },
+      {
+        "id": 3,
+        "elapsed": 3.28313946723938,
+        "correct": true,
+        "answer": "KXLNAXOA",
+        "expected": "KXLNAXOA"
+      },
+      {
+        "id": 4,
+        "elapsed": 3.27468204498291,
+        "correct": true,
+        "answer": "7YRBJINU",
+        "expected": "7YRBJINU"
+      },
+      {
+        "id": 5,
+        "elapsed": 3.289954900741577,
+        "correct": true,
+        "answer": "3MK1ID4E",
+        "expected": "3MK1ID4E"
+      },
+      {
+        "id": 6,
+        "elapsed": 3.290771484375,
+        "correct": true,
+        "answer": "2PYLFK5I",
+        "expected": "2PYLFK5I"
+      },
+      {
+        "id": 7,
+        "elapsed": 3.292001247406006,
+        "correct": true,
+        "answer": "UH856XOY",
+        "expected": "UH856XOY"
+      },
+      {
+        "id": 8,
+        "elapsed": 3.3077571392059326,
+        "correct": true,
+        "answer": "ZOE7ON36",
+        "expected": "ZOE7ON36"
+      },
+      {
+        "id": 9,
+        "elapsed": 3.2723965644836426,
+        "correct": true,
+        "answer": "1FX87PNJ",
+        "expected": "1FX87PNJ"
+      },
+      {
+        "id": 10,
+        "elapsed": 3.2991578578948975,
+        "correct": true,
+        "answer": "XRTOOEFQ",
+        "expected": "XRTOOEFQ"
+      },
+      {
+        "id": 11,
+        "elapsed": 3.30318021774292,
+        "correct": true,
+        "answer": "EJ6UZUYT",
+        "expected": "EJ6UZUYT"
+      }
+    ],
+    [
+      {
+        "id": 0,
+        "elapsed": 3.2742090225219727,
+        "correct": true,
+        "answer": "HBRPOIG8",
+        "expected": "HBRPOIG8"
+      },
+      {
+        "id": 1,
+        "elapsed": 3.2789676189422607,
+        "correct": true,
+        "answer": "MD7UINGW",
+        "expected": "MD7UINGW"
+      },
+      {
+        "id": 2,
+        "elapsed": 3.321241855621338,
+        "correct": true,
+        "answer": "RDPI4RGV",
+        "expected": "RDPI4RGV"
+      },
+      {
+        "id": 3,
+        "elapsed": 3.3159098625183105,
+        "correct": true,
+        "answer": "KXLNAXOA",
+        "expected": "KXLNAXOA"
+      },
+      {
+        "id": 4,
+        "elapsed": 3.2809503078460693,
+        "correct": true,
+        "answer": "7YRBJINU",
+        "expected": "7YRBJINU"
+      },
+      {
+        "id": 5,
+        "elapsed": 3.3102059364318848,
+        "correct": true,
+        "answer": "3MK1ID4E",
+        "expected": "3MK1ID4E"
+      },
+      {
+        "id": 6,
+        "elapsed": 3.300795078277588,
+        "correct": true,
+        "answer": "2PYLFK5I",
+        "expected": "2PYLFK5I"
+      },
+      {
+        "id": 7,
+        "elapsed": 3.3376238346099854,
+        "correct": true,
+        "answer": "UH856XOY",
+        "expected": "UH856XOY"
+      },
+      {
+        "id": 8,
+        "elapsed": 3.3118789196014404,
+        "correct": true,
+        "answer": "ZOE7ON36",
+        "expected": "ZOE7ON36"
+      },
+      {
+        "id": 9,
+        "elapsed": 3.300969123840332,
+        "correct": true,
+        "answer": "1FX87PNJ",
+        "expected": "1FX87PNJ"
+      },
+      {
+        "id": 10,
+        "elapsed": 3.3112127780914307,
+        "correct": true,
+        "answer": "XRTOOEFQ",
+        "expected": "XRTOOEFQ"
+      },
+      {
+        "id": 11,
+        "elapsed": 3.29105806350708,
+        "correct": true,
+        "answer": "EJ6UZUYT",
+        "expected": "EJ6UZUYT"
+      }
+    ]
+  ],
+  "median_revisit_time_per_run": [
+    3.289544463157654,
+    3.2903631925582886,
+    3.3055875301361084
+  ],
+  "median_of_medians": 3.2903631925582886,
+  "correct_count": 36,
+  "total_answers": 36
+}
