@@ -1,0 +1,203 @@
+Building 36 unique prompts of ~20500 tokens each (target total 737184)...
+Actual total tokens across 36 prompts: 738909
+  prompt 0: 20524 tokens, code=HBRPOIG8
+  prompt 1: 20524 tokens, code=MD7UINGW
+  prompt 2: 20524 tokens, code=RDPI4RGV
+  prompt 3: 20523 tokens, code=KXLNAXOA
+  prompt 4: 20525 tokens, code=7YRBJINU
+  prompt 5: 20526 tokens, code=3MK1ID4E
+  prompt 6: 20526 tokens, code=2PYLFK5I
+  prompt 7: 20527 tokens, code=UH856XOY
+  prompt 8: 20525 tokens, code=ZOE7ON36
+  prompt 9: 20526 tokens, code=1FX87PNJ
+  prompt 10: 20524 tokens, code=XRTOOEFQ
+  prompt 11: 20526 tokens, code=EJ6UZUYT
+  prompt 12: 20526 tokens, code=9UJE2DXB
+  prompt 13: 20523 tokens, code=BBIFT1HA
+  prompt 14: 20526 tokens, code=NJ3B4YV1
+  prompt 15: 20526 tokens, code=T2A2D5AG
+  prompt 16: 20525 tokens, code=QF9M9CAM
+  prompt 17: 20526 tokens, code=KF95CS52
+  prompt 18: 20526 tokens, code=HWQ9T832
+  prompt 19: 20524 tokens, code=EOX7RIPS
+  prompt 20: 20524 tokens, code=VRXPUYM1
+  prompt 21: 20525 tokens, code=F3W6VMHG
+  prompt 22: 20525 tokens, code=0RIO0CLK
+  prompt 23: 20526 tokens, code=WAI4G601
+  prompt 24: 20526 tokens, code=YO0JA6QF
+  prompt 25: 20525 tokens, code=UIZXVHFU
+  prompt 26: 20527 tokens, code=9ZFSY2O0
+  prompt 27: 20525 tokens, code=W5BW9YXB
+  prompt 28: 20526 tokens, code=6FVUPHQM
+  prompt 29: 20526 tokens, code=88CRC547
+  prompt 30: 20525 tokens, code=2MAVJCB4
+  prompt 31: 20527 tokens, code=79A3D0BV
+  prompt 32: 20523 tokens, code=FLR9DFND
+  prompt 33: 20526 tokens, code=Y67JMMZV
+  prompt 34: 20526 tokens, code=S4KXLA8W
+  prompt 35: 20525 tokens, code=O11D6EOJ
+
+=== baseline-A run 1/3 ===
+[fill] sending 36 prompts, 4 at a time...
+  prompt 1 (20524 tok) -> 4.89s [ok]
+  prompt 0 (20524 tok) -> 7.73s [ok]
+  prompt 3 (20523 tok) -> 10.89s [ok]
+  prompt 2 (20524 tok) -> 14.07s [ok]
+  prompt 4 (20525 tok) -> 12.35s [ok]
+  prompt 5 (20526 tok) -> 13.02s [ok]
+  prompt 6 (20526 tok) -> 13.03s [ok]
+  prompt 7 (20527 tok) -> 13.78s [ok]
+  prompt 8 (20525 tok) -> 13.06s [ok]
+  prompt 9 (20526 tok) -> 13.10s [ok]
+  prompt 10 (20524 tok) -> 12.77s [ok]
+  prompt 11 (20526 tok) -> 12.79s [ok]
+  prompt 12 (20526 tok) -> 13.16s [ok]
+  prompt 13 (20523 tok) -> 12.14s [ok]
+  prompt 14 (20526 tok) -> 13.56s [ok]
+  prompt 15 (20526 tok) -> 12.85s [ok]
+  prompt 16 (20525 tok) -> 12.87s [ok]
+  prompt 17 (20526 tok) -> 13.57s [ok]
+  prompt 18 (20526 tok) -> 12.91s [ok]
+  prompt 19 (20524 tok) -> 12.17s [ok]
+  prompt 20 (20524 tok) -> 12.52s [ok]
+  prompt 21 (20525 tok) -> 12.85s [ok]
+  prompt 22 (20525 tok) -> 12.11s [ok]
+  prompt 23 (20526 tok) -> 13.56s [ok]
+  prompt 24 (20526 tok) -> 13.22s [ok]
+  prompt 25 (20525 tok) -> 12.54s [ok]
+  prompt 26 (20527 tok) -> 13.61s [ok]
+  prompt 27 (20525 tok) -> 12.54s [ok]
+  prompt 28 (20526 tok) -> 12.90s [ok]
+  prompt 29 (20526 tok) -> 13.25s [ok]
+  prompt 30 (20525 tok) -> 12.54s [ok]
+  prompt 31 (20527 tok) -> 13.28s [ok]
+  prompt 32 (20523 tok) -> 12.58s [ok]
+  prompt 33 (20526 tok) -> 13.30s [ok]
+  prompt 34 (20526 tok) -> 13.32s [ok]
+  prompt 35 (20525 tok) -> 10.99s [ok]
+[fill] total wall time: 116.04s
+[revisit] re-sending first 12 prompt(s) sequentially...
+  prompt 0: 3.29s, correct=True, answer='HBRPOIG8' expected=HBRPOIG8
+  prompt 1: 3.29s, correct=True, answer='MD7UINGW' expected=MD7UINGW
+  prompt 2: 3.27s, correct=True, answer='RDPI4RGV' expected=RDPI4RGV
+  prompt 3: 3.25s, correct=True, answer='KXLNAXOA' expected=KXLNAXOA
+  prompt 4: 3.26s, correct=True, answer='7YRBJINU' expected=7YRBJINU
+  prompt 5: 3.31s, correct=True, answer='3MK1ID4E' expected=3MK1ID4E
+  prompt 6: 3.32s, correct=True, answer='2PYLFK5I' expected=2PYLFK5I
+  prompt 7: 3.34s, correct=True, answer='UH856XOY' expected=UH856XOY
+  prompt 8: 3.27s, correct=True, answer='ZOE7ON36' expected=ZOE7ON36
+  prompt 9: 3.27s, correct=True, answer='1FX87PNJ' expected=1FX87PNJ
+  prompt 10: 3.30s, correct=True, answer='XRTOOEFQ' expected=XRTOOEFQ
+  prompt 11: 3.32s, correct=True, answer='EJ6UZUYT' expected=EJ6UZUYT
+
+=== baseline-A run 2/3 ===
+[fill] sending 36 prompts, 4 at a time...
+  prompt 0 (20524 tok) -> 0.95s [ok]
+  prompt 1 (20524 tok) -> 0.98s [ok]
+  prompt 2 (20524 tok) -> 0.98s [ok]
+  prompt 3 (20523 tok) -> 1.00s [ok]
+  prompt 4 (20525 tok) -> 0.88s [ok]
+  prompt 5 (20526 tok) -> 0.90s [ok]
+  prompt 6 (20526 tok) -> 0.92s [ok]
+  prompt 7 (20527 tok) -> 1.11s [ok]
+  prompt 8 (20525 tok) -> 0.93s [ok]
+  prompt 10 (20524 tok) -> 0.86s [ok]
+  prompt 9 (20526 tok) -> 0.91s [ok]
+  prompt 11 (20526 tok) -> 0.72s [ok]
+  prompt 12 (20526 tok) -> 5.20s [ok]
+  prompt 13 (20523 tok) -> 7.75s [ok]
+  prompt 14 (20526 tok) -> 12.05s [ok]
+  prompt 15 (20526 tok) -> 15.28s [ok]
+  prompt 16 (20525 tok) -> 13.04s [ok]
+  prompt 17 (20526 tok) -> 13.75s [ok]
+  prompt 18 (20526 tok) -> 13.07s [ok]
+  prompt 19 (20524 tok) -> 12.30s [ok]
+  prompt 20 (20524 tok) -> 12.67s [ok]
+  prompt 21 (20525 tok) -> 13.02s [ok]
+  prompt 22 (20525 tok) -> 12.28s [ok]
+  prompt 23 (20526 tok) -> 13.76s [ok]
+  prompt 24 (20526 tok) -> 13.39s [ok]
+  prompt 25 (20525 tok) -> 12.68s [ok]
+  prompt 26 (20527 tok) -> 13.76s [ok]
+  prompt 27 (20525 tok) -> 12.66s [ok]
+  prompt 28 (20526 tok) -> 13.04s [ok]
+  prompt 29 (20526 tok) -> 13.38s [ok]
+  prompt 30 (20525 tok) -> 12.66s [ok]
+  prompt 31 (20527 tok) -> 13.41s [ok]
+  prompt 32 (20523 tok) -> 12.68s [ok]
+  prompt 33 (20526 tok) -> 13.39s [ok]
+  prompt 34 (20526 tok) -> 13.41s [ok]
+  prompt 35 (20525 tok) -> 11.03s [ok]
+[fill] total wall time: 81.29s
+[revisit] re-sending first 12 prompt(s) sequentially...
+  prompt 0: 3.27s, correct=True, answer='HBRPOIG8' expected=HBRPOIG8
+  prompt 1: 3.30s, correct=True, answer='MD7UINGW' expected=MD7UINGW
+  prompt 2: 3.27s, correct=True, answer='RDPI4RGV' expected=RDPI4RGV
+  prompt 3: 3.28s, correct=True, answer='KXLNAXOA' expected=KXLNAXOA
+  prompt 4: 3.27s, correct=True, answer='7YRBJINU' expected=7YRBJINU
+  prompt 5: 3.29s, correct=True, answer='3MK1ID4E' expected=3MK1ID4E
+  prompt 6: 3.29s, correct=True, answer='2PYLFK5I' expected=2PYLFK5I
+  prompt 7: 3.29s, correct=True, answer='UH856XOY' expected=UH856XOY
+  prompt 8: 3.31s, correct=True, answer='ZOE7ON36' expected=ZOE7ON36
+  prompt 9: 3.27s, correct=True, answer='1FX87PNJ' expected=1FX87PNJ
+  prompt 10: 3.30s, correct=True, answer='XRTOOEFQ' expected=XRTOOEFQ
+  prompt 11: 3.30s, correct=True, answer='EJ6UZUYT' expected=EJ6UZUYT
+
+=== baseline-A run 3/3 ===
+[fill] sending 36 prompts, 4 at a time...
+  prompt 0 (20524 tok) -> 0.80s [ok]
+  prompt 1 (20524 tok) -> 0.83s [ok]
+  prompt 3 (20523 tok) -> 0.82s [ok]
+  prompt 2 (20524 tok) -> 0.84s [ok]
+  prompt 4 (20525 tok) -> 0.89s [ok]
+  prompt 5 (20526 tok) -> 0.92s [ok]
+  prompt 6 (20526 tok) -> 0.92s [ok]
+  prompt 7 (20527 tok) -> 0.98s [ok]
+  prompt 8 (20525 tok) -> 0.95s [ok]
+  prompt 10 (20524 tok) -> 0.92s [ok]
+  prompt 9 (20526 tok) -> 0.95s [ok]
+  prompt 11 (20526 tok) -> 0.98s [ok]
+  prompt 12 (20526 tok) -> 5.22s [ok]
+  prompt 13 (20523 tok) -> 7.75s [ok]
+  prompt 14 (20526 tok) -> 12.07s [ok]
+  prompt 15 (20526 tok) -> 15.23s [ok]
+  prompt 16 (20525 tok) -> 13.05s [ok]
+  prompt 17 (20526 tok) -> 13.76s [ok]
+  prompt 18 (20526 tok) -> 13.07s [ok]
+  prompt 19 (20524 tok) -> 12.32s [ok]
+  prompt 20 (20524 tok) -> 12.68s [ok]
+  prompt 21 (20525 tok) -> 13.03s [ok]
+  prompt 22 (20525 tok) -> 12.28s [ok]
+  prompt 23 (20526 tok) -> 13.75s [ok]
+  prompt 24 (20526 tok) -> 13.39s [ok]
+  prompt 25 (20525 tok) -> 12.69s [ok]
+  prompt 26 (20527 tok) -> 13.77s [ok]
+  prompt 27 (20525 tok) -> 12.67s [ok]
+  prompt 28 (20526 tok) -> 13.03s [ok]
+  prompt 29 (20526 tok) -> 13.38s [ok]
+  prompt 30 (20525 tok) -> 12.65s [ok]
+  prompt 31 (20527 tok) -> 13.39s [ok]
+  prompt 32 (20523 tok) -> 12.69s [ok]
+  prompt 33 (20526 tok) -> 13.40s [ok]
+  prompt 34 (20526 tok) -> 13.43s [ok]
+  prompt 35 (20525 tok) -> 11.05s [ok]
+[fill] total wall time: 81.23s
+[revisit] re-sending first 12 prompt(s) sequentially...
+  prompt 0: 3.27s, correct=True, answer='HBRPOIG8' expected=HBRPOIG8
+  prompt 1: 3.28s, correct=True, answer='MD7UINGW' expected=MD7UINGW
+  prompt 2: 3.32s, correct=True, answer='RDPI4RGV' expected=RDPI4RGV
+  prompt 3: 3.32s, correct=True, answer='KXLNAXOA' expected=KXLNAXOA
+  prompt 4: 3.28s, correct=True, answer='7YRBJINU' expected=7YRBJINU
+  prompt 5: 3.31s, correct=True, answer='3MK1ID4E' expected=3MK1ID4E
+  prompt 6: 3.30s, correct=True, answer='2PYLFK5I' expected=2PYLFK5I
+  prompt 7: 3.34s, correct=True, answer='UH856XOY' expected=UH856XOY
+  prompt 8: 3.31s, correct=True, answer='ZOE7ON36' expected=ZOE7ON36
+  prompt 9: 3.30s, correct=True, answer='1FX87PNJ' expected=1FX87PNJ
+  prompt 10: 3.31s, correct=True, answer='XRTOOEFQ' expected=XRTOOEFQ
+  prompt 11: 3.29s, correct=True, answer='EJ6UZUYT' expected=EJ6UZUYT
+
+=== SUMMARY (baseline-A) ===
+Median revisit time per run: [3.289544463157654, 3.2903631925582886, 3.3055875301361084]
+Median of medians: 3.290s
+Correct: 36/36
+Saved to results_baseline_A.json
