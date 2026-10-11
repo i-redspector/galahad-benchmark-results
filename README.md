@@ -1,9 +1,11 @@
 # Galahad Benchmark Challenge — Results
 
-**Tester:** Abdullah Zulfiqar ([@redspector](https://www.freelancer.com/u/redspector) on Freelancer.com)
-**Hardware:** NVIDIA A40 (46 GB VRAM), 96 vCPU, 503 GB RAM, local NVMe-backed overlay disk (RunPod, on-demand pod)
-**Model:** Qwen3-4B-AWQ (4-bit AWQ, served via vLLM's OpenAI-compatible API) — chosen as "a comparable LLM" per the brief, sized to fit comfortably alongside the full working set required by the test
-**vLLM versions tried:** 0.31.0 and 0.30.0 (Galahad's own docs list 0.30 as last verified)
+| | |
+|---|---|
+| **Tester** | Abdullah Zulfiqar ([@redspector](https://www.freelancer.com/u/redspector) on Freelancer.com) |
+| **Hardware** | NVIDIA A40 (46 GB VRAM), 96 vCPU, 503 GB RAM, local NVMe-backed overlay disk (RunPod, on-demand pod) |
+| **Model** | Qwen3-4B-AWQ (4-bit AWQ, served via vLLM's OpenAI-compatible API) — chosen as "a comparable LLM" per the brief, sized to fit comfortably alongside the full working set required by the test |
+| **vLLM versions tried** | 0.31.0 and 0.30.0 (Galahad's own docs list 0.30 as last verified) |
 
 ## Summary
 
