@@ -7,11 +7,15 @@
 | **Model** | Qwen3-4B-AWQ (4-bit AWQ, served via vLLM's OpenAI-compatible API) — chosen as "a comparable LLM" per the brief, sized to fit comfortably alongside the full working set required by the test |
 | **vLLM versions tried** | 0.31.0 and 0.30.0 (Galahad's own docs list 0.30 as last verified) |
 
-## Update — 2026-10-12, fix confirmed
+## Update — 2026-10-12, fix confirmed, and a real speed win
 
-Corbenic pushed a new `galahad-kv` release (1.32.0) after I reported the crash below. I re-ran the exact same Galahad (B) test against it on a fresh A40 pod: **it started clean, no crash, 36/36 correct across all 3 runs**, median revisit time 3.45s (baseline was 3.29s). Full numbers in `results/results_galahad_B.json`, raw logs in `logs/galahad_B_server.log` and `logs/galahad_B_bench.log`.
+Corbenic pushed a new `galahad-kv` release (1.32.0) after I reported the crash below. I re-ran the exact same Galahad (B) test against it on a fresh A40 pod: **it started clean, no crash, 36/36 correct across all 3 runs.**
 
-One thing worth flagging back to Corbenic: of the 12 revisited prompts per run, only 3 (ids 0, 1, 3) actually hit Galahad's disk cache (~0.5s, consistent across all 3 runs) — the other 9 recomputed at roughly the same speed as plain vLLM (~3.45s, vs. baseline's 3.29s). The server's own `KV Transfer metrics` logged `saver_failed=3` throughout the run, which lines up with that 3/12 hit pattern — something in the save path is dropping most writes before they land. So the crash is fixed, but the caching itself isn't yet giving a speed win over baseline in this test; happy to re-run once that's looked at.
+First pass used `GALAHAD_DISK_BUDGET_GB=10` (left over from the crash-testing phase, never reconsidered against this test's actual prompt size) — median revisit time 3.45s, barely different from baseline's 3.29s. Only 3 of 12 revisited prompts per run hit the disk cache; the rest recomputed. Before pinning that on Galahad, I did the math: this test's prompts are ~20,500 tokens each, and the earlier crash logs put this model's KV cache at ~144 KB/token — so each prompt's cache is ~2.9 GB. A 10 GB budget (minus Galahad's 5 GB free-space floor) only has room for 2-3 prompts. That's almost exactly the 3/12 hit rate observed, so the bottleneck was my config, not their connector.
+
+Re-ran with `GALAHAD_DISK_BUDGET_GB=30`: **median revisit time dropped to 0.91s — a 3.6x speedup over baseline's 3.29s**, still 36/36 correct across all 3 runs. Full numbers in `results/results_galahad_B_30GB.json` (10GB attempt kept at `results/results_galahad_B.json` for comparison), raw logs in `logs/galahad_B_30GB_server.log` and `logs/galahad_B_30GB_bench.log`.
+
+So: the crash is fixed, and once the disk budget actually fits the working set, Galahad delivers a genuine, substantial speedup over plain vLLM on this test.
 
 ## Original report (below) — the crash, pre-fix
 
@@ -140,6 +144,7 @@ vllm serve <model-path> --quantization awq --gpu-memory-utilization 0.85 --max-m
 - `logs/galahad_crash_maxlen32768.log` — full log of the Galahad crash at the original settings
 - `logs/galahad_crash_maxlen4096.log` — full log of the diagnostic run with an 8x smaller context
 - `scripts/galahad_bench.py` — the benchmark harness (prompt generation, fill, revisit, timing, JSON output)
-- `results/results_galahad_B.json` — full raw output from the post-fix Galahad (B) run (galahad-kv 1.32.0), all 3 runs, all 36 correctness checks
-- `logs/galahad_B_server.log` — full vLLM server log for the post-fix Galahad run, including the KV transfer metrics
-- `logs/galahad_B_bench.log` — full benchmark script output for the post-fix Galahad run
+- `results/results_galahad_B.json` — post-fix Galahad (B) run with a 10GB disk budget (too small for this test's prompt size — kept for comparison)
+- `results/results_galahad_B_30GB.json` — post-fix Galahad (B) run with a 30GB disk budget — the real result, 3.6x faster than baseline
+- `logs/galahad_B_server.log`, `logs/galahad_B_bench.log` — logs for the 10GB-budget run
+- `logs/galahad_B_30GB_server.log`, `logs/galahad_B_30GB_bench.log` — logs for the 30GB-budget run, including the KV transfer metrics
