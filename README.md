@@ -7,7 +7,13 @@
 | **Model** | Qwen3-4B-AWQ (4-bit AWQ, served via vLLM's OpenAI-compatible API) — chosen as "a comparable LLM" per the brief, sized to fit comfortably alongside the full working set required by the test |
 | **vLLM versions tried** | 0.31.0 and 0.30.0 (Galahad's own docs list 0.30 as last verified) |
 
-## Summary
+## Update — 2026-10-12, fix confirmed
+
+Corbenic pushed a new `galahad-kv` release (1.32.0) after I reported the crash below. I re-ran the exact same Galahad (B) test against it on a fresh A40 pod: **it started clean, no crash, 36/36 correct across all 3 runs**, median revisit time 3.45s (baseline was 3.29s). Full numbers in `results/results_galahad_B.json`, raw logs in `logs/galahad_B_server.log` and `logs/galahad_B_bench.log`.
+
+One thing worth flagging back to Corbenic: of the 12 revisited prompts per run, only 3 (ids 0, 1, 3) actually hit Galahad's disk cache (~0.5s, consistent across all 3 runs) — the other 9 recomputed at roughly the same speed as plain vLLM (~3.45s, vs. baseline's 3.29s). The server's own `KV Transfer metrics` logged `saver_failed=3` throughout the run, which lines up with that 3/12 hit pattern — something in the save path is dropping most writes before they land. So the crash is fixed, but the caching itself isn't yet giving a speed win over baseline in this test; happy to re-run once that's looked at.
+
+## Original report (below) — the crash, pre-fix
 
 Baseline vLLM (no Galahad) ran clean: 36 unique prompts, 738,909 tokens total, 3 full runs, **36/36 correct answers, median revisit time 3.29s**. Full results are in `results/baseline_A.json`.
 
@@ -134,3 +140,6 @@ vllm serve <model-path> --quantization awq --gpu-memory-utilization 0.85 --max-m
 - `logs/galahad_crash_maxlen32768.log` — full log of the Galahad crash at the original settings
 - `logs/galahad_crash_maxlen4096.log` — full log of the diagnostic run with an 8x smaller context
 - `scripts/galahad_bench.py` — the benchmark harness (prompt generation, fill, revisit, timing, JSON output)
+- `results/results_galahad_B.json` — full raw output from the post-fix Galahad (B) run (galahad-kv 1.32.0), all 3 runs, all 36 correctness checks
+- `logs/galahad_B_server.log` — full vLLM server log for the post-fix Galahad run, including the KV transfer metrics
+- `logs/galahad_B_bench.log` — full benchmark script output for the post-fix Galahad run
