@@ -1,325 +1,0 @@
-(APIServer pid=1618) INFO 10-12 15:38:47 [api_utils.py:347] 
-(APIServer pid=1618) INFO 10-12 15:38:47 [api_utils.py:347]        █     █     █▄   ▄█
-(APIServer pid=1618) INFO 10-12 15:38:47 [api_utils.py:347]  ▄▄ ▄█ █     █     █ ▀▄▀ █  version 0.31.0
-(APIServer pid=1618) INFO 10-12 15:38:47 [api_utils.py:347]   █▄█▀ █     █     █     █  model   /workspace/models/Qwen3-4B-AWQ
-(APIServer pid=1618) INFO 10-12 15:38:47 [api_utils.py:347]    ▀▀  ▀▀▀▀▀ ▀▀▀▀▀ ▀     ▀
-(APIServer pid=1618) INFO 10-12 15:38:47 [api_utils.py:347] 
-(APIServer pid=1618) INFO 10-12 15:38:47 [api_utils.py:286] non-default args: {'model_tag': '/workspace/models/Qwen3-4B-AWQ', 'model': '/workspace/models/Qwen3-4B-AWQ', 'max_model_len': 32768, 'quantization': 'awq', 'served_model_name': ['Qwen3-4B-AWQ'], 'gpu_memory_utilization': 0.85, 'kv_transfer_config': KVTransferConfig(kv_connector='GalahadConnector', engine_id='00011ae8-6f4b-4932-b5d6-f217d4a37336', kv_buffer_device='cuda', kv_buffer_size=1000000000.0, kv_role='kv_both', kv_rank=None, kv_parallel_size=1, kv_ip='127.0.0.1', kv_port=14579, kv_connector_extra_config={}, kv_connector_module_path=None, enable_permute_local_kv=False, kv_load_failure_policy='fail')}
-(APIServer pid=1618) INFO 10-12 15:38:56 [model.py:699] Resolved architecture: Qwen3ForCausalLM
-(APIServer pid=1618) INFO 10-12 15:38:56 [model.py:2109] Using max model len 32768
-(APIServer pid=1618) INFO 10-12 15:38:56 [kernel.py:408] Final IR op priority after setting platform defaults: IrOpPriorityConfig(rms_norm=['native'], fused_add_rms_norm=['native'], gelu_and_mul_sparse=['triton', 'native'])
-(EngineCore pid=2117) INFO 10-12 15:39:07 [core.py:129] Initializing a V1 LLM engine (v0.31.0) with config: model='/workspace/models/Qwen3-4B-AWQ', speculative_config=None, tokenizer='/workspace/models/Qwen3-4B-AWQ', skip_tokenizer_init=False, tokenizer_mode=auto, revision=None, tokenizer_revision=None, trust_remote_code=False, dtype=torch.float16, max_seq_len=32768, download_dir=None, load_format=auto, tensor_parallel_size=1, pipeline_parallel_size=1, data_parallel_size=1, decode_context_parallel_size=1, dcp_comm_backend=ag_rs, disable_custom_all_reduce=False, quantization=auto_awq, quantization_config=None, enforce_eager=False, aux_output_config=AuxOutputConfig(enable_return_routed_experts=False, max_bytes=None), kv_cache_dtype=auto, device_config=cuda, structured_outputs_config=StructuredOutputsConfig(backend='auto', disable_any_whitespace=False, disable_additional_properties=False, reasoning_parser='', reasoning_parser_plugin='', enable_in_reasoning=False), observability_config=ObservabilityConfig(show_hidden_metrics_for_version=None, otlp_traces_endpoint=None, collect_detailed_traces=None, per_request_spec_decode_metrics='none', kv_cache_metrics=False, kv_cache_metrics_sample=0.01, cudagraph_metrics=False, enable_layerwise_nvtx_tracing=False, enable_mfu_metrics=False, enable_mm_processor_stats=False, enable_logging_iteration_details=False, jit_monitor_mode='warn', jit_monitor_verbose=False), seed=0, served_model_name=Qwen3-4B-AWQ, enable_prefix_caching=True, enable_chunked_prefill=True, pooler_config=None, compilation_config={'mode': <CompilationMode.VLLM_COMPILE: 3>, 'debug_dump_path': None, 'cache_dir': '', 'compile_cache_save_format': 'binary', 'backend': 'inductor', 'custom_ops': ['none'], 'ir_enable_torch_wrap': True, 'splitting_ops': ['vllm::unified_attention_with_output', 'vllm::unified_mla_attention_with_output', 'vllm::mamba_mixer2', 'vllm::mamba_mixer', 'vllm::short_conv', 'vllm::qwen4_exp_ple_short_conv', 'vllm::qwen4_exp_qsa_with_output', 'vllm::linear_attention', 'vllm::qwen_gdn_attention_core', 'vllm::qwen_gdn_attention_core_fused_norm_packed', 'vllm::gdn_attention_core_xpu', 'vllm::olmo_hybrid_gdn_full_forward', 'vllm::sparse_attn_indexer', 'vllm::rocm_aiter_sparse_attn_indexer', 'vllm::deepseek_v4_attention', 'vllm::hpc_rope_norm_forward', 'vllm::unified_kv_cache_update', 'vllm::unified_mla_kv_cache_update'], 'compile_mm_encoder': False, 'cudagraph_mm_encoder': False, 'encoder_cudagraph_token_budgets': [], 'encoder_cudagraph_max_vision_items_per_batch': 0, 'encoder_cudagraph_max_frames_per_batch': None, 'compile_sizes': [], 'compile_ranges_endpoints': [2048], 'inductor_compile_config': {'enable_auto_functionalized_v2': False, 'combo_kernels': True, 'benchmark_combo_kernel': True}, 'inductor_passes': {}, 'cudagraph_mode': <CUDAGraphMode.FULL_AND_PIECEWISE: (2, 1)>, 'cudagraph_num_of_warmups': 1, 'cudagraph_capture_sizes': [1, 2, 4, 8, 16, 24, 32, 40, 48, 56, 64, 72, 80, 88, 96, 104, 112, 120, 128, 136, 144, 152, 160, 168, 176, 184, 192, 200, 208, 216, 224, 232, 240, 248, 256, 272, 288, 304, 320, 336, 352, 368, 384, 400, 416, 432, 448, 464, 480, 496, 512], 'cudagraph_copy_inputs': False, 'cudagraph_specialize_lora': True, 'use_inductor_graph_partition': False, 'pass_config': {'fuse_norm_quant': False, 'fuse_act_quant': False, 'fuse_attn_quant': False, 'enable_sp': False, 'fuse_gemm_comms': False, 'fuse_allreduce_rms': False, 'enable_qk_norm_rope_fusion': False, 'fuse_rope_kvcache_cat_mla': False, 'fuse_act_padding': False, 'fuse_qk_norm_rope_kvcache': False}, 'max_cudagraph_capture_size': 512, 'dynamic_shapes_config': {'type': <DynamicShapesType.BACKED: 'backed'>, 'evaluate_guards': False, 'assume_32_bit_indexing': False}, 'local_cache_dir': None, 'fast_moe_cold_start': False, 'static_all_moe_layers': []}, kernel_config=KernelConfig(ir_op_priority=IrOpPriorityConfig(rms_norm=['native'], fused_add_rms_norm=['native'], gelu_and_mul_sparse=['triton', 'native']), enable_flashinfer_autotune=True, enable_cutedsl_warmup=True, enable_jit_warmup=True, moe_backend='auto', sparse_indexer_topk_backend='auto', linear_backend='auto', linear_backend_per_quant=None)
-(EngineCore pid=2117) INFO 10-12 15:39:07 [parallel_state.py:1825] world_size=1 rank=0 local_rank=0 distributed_init_method=file:///tmp/vllm_dist_e6dd6583c9454207bdac8799608c0da1 backend=nccl
-(EngineCore pid=2117) INFO 10-12 15:39:07 [parallel_state.py:2269] rank 0 in world size 1 is assigned as DP rank 0, PP rank 0, PCP rank 0, TP rank 0, ETP rank 0, EP rank N/A, EPLB rank N/A
-(EngineCore pid=2117) INFO 10-12 15:39:07 [gpu_worker.py:479] Using V2 Model Runner
-(EngineCore pid=2117) INFO 10-12 15:39:08 [model_runner.py:375] Loading model from scratch...
-(EngineCore pid=2117) INFO 10-12 15:39:08 [__init__.py:870] Using MarlinLinearKernel for mixed-precision linear
-(EngineCore pid=2117) INFO 10-12 15:39:08 [auto_awq.py:451] Using MarlinLinearKernel for AutoAWQMarlinLinearMethod
-(EngineCore pid=2117) INFO 10-12 15:39:09 [cuda.py:526] Using FLASH_ATTN attention backend out of potential backends: ['FLASH_ATTN', 'FLASHINFER', 'TRITON_ATTN', 'FLEX_ATTENTION'].
-(EngineCore pid=2117) INFO 10-12 15:39:09 [flash_attn.py:1167] Using FlashAttention version 2
-(EngineCore pid=2117) INFO 10-12 15:39:09 [weight_utils.py:1063] Filesystem type for checkpoints: OVERLAY. Checkpoint size: 2.48 GiB. Available RAM: 27.57 GiB.
-(EngineCore pid=2117) INFO 10-12 15:39:09 [weight_utils.py:1086] Auto-prefetch is disabled because the filesystem (OVERLAY) is not a recognized network FS (NFS/Lustre). If you want to force prefetching, start vLLM with --safetensors-load-strategy=prefetch.
-Loading safetensors checkpoint shards:   0% Completed | 0/1 [00:00<?, ?it/s]
-Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00<00:00,  1.24it/s]
-Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00<00:00,  1.24it/s]
-
-(EngineCore pid=2117) INFO 10-12 15:39:10 [default_loader.py:484] Loading weights took 0.84 seconds
-(EngineCore pid=2117) INFO 10-12 15:39:11 [model_runner.py:407] Model loading took 2.5 GiB memory and 3.271021 seconds
-(EngineCore pid=2117) INFO 10-12 15:39:11 [topk_topp_sampler.py:124] Using FlashInfer for top-p & top-k sampling.
-(EngineCore pid=2117) INFO 10-12 15:39:11 [torch_utils.py:286] Reducing Torch threads from 48 to 1 for serving. Set OMP_NUM_THREADS in the external environment to override.
-(EngineCore pid=2117) INFO 10-12 15:39:11 [utils.py:343] Using LBNHC KV cache layout.
-(EngineCore pid=2117) INFO 10-12 15:39:20 [backends.py:1090] Using cache directory: /root/.cache/vllm/torch_compile_cache/1d1b602fb5/rank_0_0/backbone for vLLM's torch.compile
-(EngineCore pid=2117) INFO 10-12 15:39:20 [backends.py:1151] Dynamo bytecode transform time: 7.98 s
-(EngineCore pid=2117) INFO 10-12 15:39:42 [backends.py:391] Compiling a graph for compile range (1, 2048) takes 22.00 s
-(EngineCore pid=2117) INFO 10-12 15:39:47 [backends.py:916] collected artifacts: 37 entries, 3 artifacts, 5850732 bytes total
-(EngineCore pid=2117) INFO 10-12 15:39:47 [decorators.py:717] saved AOT compiled function to /root/.cache/vllm/torch_compile_cache/torch_aot_compile/5cc529c2ba2ca02fdd55ed0547de1acb2b3cba6cec15d8b5828e61a9e4a56252/rank_0_0/model
-(EngineCore pid=2117) INFO 10-12 15:39:47 [monitor.py:53] torch.compile took 35.50 s in total
-(EngineCore pid=2117) INFO 10-12 15:39:47 [monitor.py:81] Initial profiling/warmup run took 0.09 s
-Capturing CUDA graphs (PIECEWISE):   0%|          | 0/51 [00:00<?, ?it/s]Capturing CUDA graphs (PIECEWISE):   2%|▏         | 1/51 [00:00<00:05,  8.93it/s]Capturing CUDA graphs (PIECEWISE):   4%|▍         | 2/51 [00:00<00:05,  9.04it/s]Capturing CUDA graphs (PIECEWISE):   6%|▌         | 3/51 [00:00<00:05,  9.11it/s]Capturing CUDA graphs (PIECEWISE):   8%|▊         | 4/51 [00:00<00:05,  8.86it/s]Capturing CUDA graphs (PIECEWISE):  10%|▉         | 5/51 [00:00<00:05,  9.11it/s]Capturing CUDA graphs (PIECEWISE):  12%|█▏        | 6/51 [00:00<00:04,  9.30it/s]Capturing CUDA graphs (PIECEWISE):  14%|█▎        | 7/51 [00:00<00:04,  9.45it/s]Capturing CUDA graphs (PIECEWISE):  16%|█▌        | 8/51 [00:00<00:04,  9.57it/s]Capturing CUDA graphs (PIECEWISE):  20%|█▉        | 10/51 [00:01<00:04,  9.88it/s]Capturing CUDA graphs (PIECEWISE):  24%|██▎       | 12/51 [00:01<00:03, 10.11it/s]Capturing CUDA graphs (PIECEWISE):  27%|██▋       | 14/51 [00:01<00:03, 10.56it/s]Capturing CUDA graphs (PIECEWISE):  31%|███▏      | 16/51 [00:01<00:03, 10.86it/s]Capturing CUDA graphs (PIECEWISE):  35%|███▌      | 18/51 [00:01<00:02, 11.97it/s]Capturing CUDA graphs (PIECEWISE):  39%|███▉      | 20/51 [00:01<00:02, 12.89it/s]Capturing CUDA graphs (PIECEWISE):  43%|████▎     | 22/51 [00:01<00:02, 13.93it/s]Capturing CUDA graphs (PIECEWISE):  47%|████▋     | 24/51 [00:02<00:01, 14.84it/s]Capturing CUDA graphs (PIECEWISE):  51%|█████     | 26/51 [00:02<00:01, 15.88it/s]Capturing CUDA graphs (PIECEWISE):  55%|█████▍    | 28/51 [00:02<00:01, 16.32it/s]Capturing CUDA graphs (PIECEWISE):  59%|█████▉    | 30/51 [00:02<00:01, 16.60it/s]Capturing CUDA graphs (PIECEWISE):  63%|██████▎   | 32/51 [00:02<00:01, 17.37it/s]Capturing CUDA graphs (PIECEWISE):  67%|██████▋   | 34/51 [00:02<00:00, 17.60it/s]Capturing CUDA graphs (PIECEWISE):  71%|███████   | 36/51 [00:02<00:00, 18.20it/s]Capturing CUDA graphs (PIECEWISE):  75%|███████▍  | 38/51 [00:02<00:00, 18.51it/s]Capturing CUDA graphs (PIECEWISE):  78%|███████▊  | 40/51 [00:02<00:00, 18.23it/s]Capturing CUDA graphs (PIECEWISE):  82%|████████▏ | 42/51 [00:03<00:00, 18.27it/s]Capturing CUDA graphs (PIECEWISE):  88%|████████▊ | 45/51 [00:03<00:00, 19.13it/s]Capturing CUDA graphs (PIECEWISE):  94%|█████████▍| 48/51 [00:03<00:00, 19.82it/s]Capturing CUDA graphs (PIECEWISE): 100%|██████████| 51/51 [00:03<00:00, 20.34it/s]Capturing CUDA graphs (PIECEWISE): 100%|██████████| 51/51 [00:03<00:00, 14.60it/s]
-Capturing CUDA graphs (FULL):   0%|          | 0/2 [00:00<?, ?it/s]Capturing CUDA graphs (FULL): 100%|██████████| 2/2 [00:00<00:00, 19.06it/s]Capturing CUDA graphs (FULL): 100%|██████████| 2/2 [00:00<00:00, 19.03it/s]
-(EngineCore pid=2117) INFO 10-12 15:39:53 [model_runner.py:1087] Graph capturing finished in 4 secs, took 0.40 GiB
-(EngineCore pid=2117) INFO 10-12 15:39:54 [gpu_worker.py:692] Available KV cache memory: 33.75 GiB
-(EngineCore pid=2117) INFO 10-12 15:39:54 [gpu_worker.py:707] CUDA graph memory profiling is enabled (default since v0.21.0). The current --gpu-memory-utilization=0.8500 is equivalent to --gpu-memory-utilization=0.8399 without CUDA graph memory profiling. To maintain the same effective KV cache size as before, increase --gpu-memory-utilization to 0.8601. To disable, set VLLM_MEMORY_PROFILER_ESTIMATE_CUDAGRAPHS=0.
-(EngineCore pid=2117) INFO 10-12 15:39:54 [kv_cache_utils.py:2464] GPU KV cache size: 245,728 tokens, Maximum concurrency for 32,768 tokens per request: 7.50x
-(EngineCore pid=2117) INFO 10-12 15:39:54 [factory.py:62] Creating v1 connector with name: GalahadConnector and engine_id: 00011ae8-6f4b-4932-b5d6-f217d4a37336
-(EngineCore pid=2117) WARNING 10-12 15:39:54 [base.py:209] Initializing KVConnectorBase_V1. This API is experimental and subject to change in the future as we iterate the design.
-GLH-D60 0 0 0.0ms skip=0/0/0/0/0
-[galahad] disk budget: cap 10.0 GB, floor 5.0 GB free (/workspace/galahad_cache/blocks)
-[galahad] caching ENABLED: 36 layers, uniform geometry
-(EngineCore pid=2117) INFO 10-12 15:39:55 [kernel_warmup.py:172] JIT kernel warmup starting.
-(EngineCore pid=2117) INFO 10-12 15:39:55 [kernel_warmup.py:185] JIT kernel warmup finished in 0.00s.
-2026-10-12 15:39:57,311 - INFO - core.py:564 - flashinfer.jit: Building JIT module sampling; this can take several minutes on first use.
-Capturing CUDA graphs (PIECEWISE):   0%|          | 0/51 [00:00<?, ?it/s]Capturing CUDA graphs (PIECEWISE):   2%|▏         | 1/51 [00:00<00:05,  8.35it/s]Capturing CUDA graphs (PIECEWISE):   4%|▍         | 2/51 [00:00<00:05,  8.61it/s]Capturing CUDA graphs (PIECEWISE):   6%|▌         | 3/51 [00:00<00:05,  8.76it/s]Capturing CUDA graphs (PIECEWISE):   8%|▊         | 4/51 [00:00<00:05,  8.75it/s]Capturing CUDA graphs (PIECEWISE):  10%|▉         | 5/51 [00:00<00:05,  8.94it/s]Capturing CUDA graphs (PIECEWISE):  12%|█▏        | 6/51 [00:00<00:04,  9.00it/s]Capturing CUDA graphs (PIECEWISE):  14%|█▎        | 7/51 [00:00<00:04,  9.15it/s]Capturing CUDA graphs (PIECEWISE):  16%|█▌        | 8/51 [00:00<00:04,  9.25it/s]Capturing CUDA graphs (PIECEWISE):  20%|█▉        | 10/51 [00:01<00:04,  9.68it/s]Capturing CUDA graphs (PIECEWISE):  22%|██▏       | 11/51 [00:01<00:04,  9.75it/s]Capturing CUDA graphs (PIECEWISE):  25%|██▌       | 13/51 [00:01<00:03, 10.05it/s]Capturing CUDA graphs (PIECEWISE):  29%|██▉       | 15/51 [00:01<00:03, 10.27it/s]Capturing CUDA graphs (PIECEWISE):  33%|███▎      | 17/51 [00:01<00:03, 11.11it/s]Capturing CUDA graphs (PIECEWISE):  37%|███▋      | 19/51 [00:01<00:02, 12.10it/s]Capturing CUDA graphs (PIECEWISE):  41%|████      | 21/51 [00:01<00:02, 13.26it/s]Capturing CUDA graphs (PIECEWISE):  45%|████▌     | 23/51 [00:02<00:01, 14.32it/s]Capturing CUDA graphs (PIECEWISE):  49%|████▉     | 25/51 [00:02<00:01, 15.29it/s]Capturing CUDA graphs (PIECEWISE):  53%|█████▎    | 27/51 [00:02<00:01, 16.12it/s]Capturing CUDA graphs (PIECEWISE):  57%|█████▋    | 29/51 [00:02<00:01, 16.72it/s]Capturing CUDA graphs (PIECEWISE):  61%|██████    | 31/51 [00:02<00:01, 16.90it/s]Capturing CUDA graphs (PIECEWISE):  65%|██████▍   | 33/51 [00:02<00:01, 16.85it/s]Capturing CUDA graphs (PIECEWISE):  69%|██████▊   | 35/51 [00:02<00:00, 17.49it/s]Capturing CUDA graphs (PIECEWISE):  73%|███████▎  | 37/51 [00:02<00:00, 18.02it/s]Capturing CUDA graphs (PIECEWISE):  76%|███████▋  | 39/51 [00:02<00:00, 18.43it/s]Capturing CUDA graphs (PIECEWISE):  80%|████████  | 41/51 [00:03<00:00, 18.42it/s]Capturing CUDA graphs (PIECEWISE):  84%|████████▍ | 43/51 [00:03<00:00, 18.61it/s]Capturing CUDA graphs (PIECEWISE):  90%|█████████ | 46/51 [00:03<00:00, 19.17it/s]Capturing CUDA graphs (PIECEWISE):  96%|█████████▌| 49/51 [00:03<00:00, 19.53it/s]Capturing CUDA graphs (PIECEWISE): 100%|██████████| 51/51 [00:03<00:00, 14.29it/s]
-Capturing CUDA graphs (FULL):   0%|          | 0/35 [00:00<?, ?it/s]Capturing CUDA graphs (FULL):   6%|▌         | 2/35 [00:00<00:01, 19.95it/s]Capturing CUDA graphs (FULL):  11%|█▏        | 4/35 [00:00<00:01, 19.26it/s]Capturing CUDA graphs (FULL):  20%|██        | 7/35 [00:00<00:01, 20.23it/s]Capturing CUDA graphs (FULL):  29%|██▊       | 10/35 [00:00<00:01, 21.32it/s]Capturing CUDA graphs (FULL):  37%|███▋      | 13/35 [00:00<00:00, 22.23it/s]Capturing CUDA graphs (FULL):  46%|████▌     | 16/35 [00:00<00:00, 22.23it/s]Capturing CUDA graphs (FULL):  54%|█████▍    | 19/35 [00:00<00:00, 21.95it/s]Capturing CUDA graphs (FULL):  63%|██████▎   | 22/35 [00:01<00:00, 22.67it/s]Capturing CUDA graphs (FULL):  71%|███████▏  | 25/35 [00:01<00:00, 23.45it/s]Capturing CUDA graphs (FULL):  80%|████████  | 28/35 [00:01<00:00, 24.09it/s]Capturing CUDA graphs (FULL):  89%|████████▊ | 31/35 [00:01<00:00, 24.38it/s]Capturing CUDA graphs (FULL):  97%|█████████▋| 34/35 [00:01<00:00, 24.85it/s]Capturing CUDA graphs (FULL): 100%|██████████| 35/35 [00:01<00:00, 23.15it/s]
-(EngineCore pid=2117) INFO 10-12 15:41:16 [model_runner.py:1087] Graph capturing finished in 6 secs, took 0.26 GiB
-(EngineCore pid=2117) INFO 10-12 15:41:16 [gpu_worker.py:892] CUDA graph pool memory: 0.26 GiB (actual), 0.45 GiB (estimated), difference: 0.19 GiB (71.6%).
-(EngineCore pid=2117) INFO 10-12 15:41:16 [gpu_worker.py:955] Free memory on device (44.16/44.42 GiB) on startup. Desired GPU memory utilization is (0.85, 37.76 GiB). Actual usage is 2.83 GiB for consumed memory (weights + non-torch), 1.18 GiB for peak activation, and 0.26 GiB for CUDAGraph memory. Replace gpu_memory_utilization config with `--kv-cache-memory=35797952103` (33.34 GiB) to fit into requested memory, or `--kv-cache-memory=42669293568` (39.74 GiB) to fully utilize gpu memory. Current kv cache memory in use is 33.75 GiB.
-(EngineCore pid=2117) INFO 10-12 15:41:17 [jit_monitor.py:84] Kernel JIT monitor activated; monitored JIT compilations during inference will use mode=warn.
-(EngineCore pid=2117) INFO 10-12 15:41:17 [core.py:373] init engine (profile, create kv cache, warmup model) took 126.01 s (compilation: 35.50 s)
-(EngineCore pid=2117) INFO 10-12 15:41:17 [factory.py:62] Creating v1 connector with name: GalahadConnector and engine_id: 00011ae8-6f4b-4932-b5d6-f217d4a37336
-(EngineCore pid=2117) WARNING 10-12 15:41:17 [base.py:209] Initializing KVConnectorBase_V1. This API is experimental and subject to change in the future as we iterate the design.
-[galahad] observability unavailable ([Errno 98] Address already in use) -- serving continues WITHOUT health/metrics endpoints.
-(EngineCore pid=2117) INFO 10-12 15:41:17 [kernel.py:408] Final IR op priority after setting platform defaults: IrOpPriorityConfig(rms_norm=['native'], fused_add_rms_norm=['native'], gelu_and_mul_sparse=['triton', 'native'])
-(APIServer pid=1618) INFO 10-12 15:41:17 [entry.py:132] Supported tasks: ['generate']
-(APIServer pid=1618) INFO 10-12 15:41:18 [factories.py:76] Scale-out endpoints are disabled. Set --enable-scale-out to enable them.
-(APIServer pid=1618) INFO 10-12 15:41:18 [hf.py:646] Detected the chat template content format to be 'string'. You can set `--chat-template-content-format` to override this.
-(APIServer pid=1618) WARNING 10-12 15:41:18 [model.py:1850] Default vLLM sampling parameters have been overridden by the model's `generation_config.json`: `{'temperature': 0.6, 'top_k': 20, 'top_p': 0.95}`. If this is not intended, please relaunch vLLM instance with `--generation-config vllm`.
-(APIServer pid=1618) INFO 10-12 15:41:18 [entry.py:136] Starting vLLM server on http://0.0.0.0:8000
-(APIServer pid=1618) INFO 10-12 15:41:18 [launcher.py:60] Available routes are:
-(APIServer pid=1618) INFO 10-12 15:41:18 [launcher.py:69] Route: /openapi.json, Methods: GET, HEAD
-(APIServer pid=1618) INFO 10-12 15:41:18 [launcher.py:69] Route: /docs, Methods: GET, HEAD
-(APIServer pid=1618) INFO 10-12 15:41:18 [launcher.py:69] Route: /docs/oauth2-redirect, Methods: GET, HEAD
-(APIServer pid=1618) INFO 10-12 15:41:18 [launcher.py:69] Route: /redoc, Methods: GET, HEAD
-(APIServer pid=1618) INFO 10-12 15:41:18 [launcher.py:69] Route: /load, Methods: GET
-(APIServer pid=1618) INFO 10-12 15:41:18 [launcher.py:69] Route: /version, Methods: GET
-(APIServer pid=1618) INFO 10-12 15:41:18 [launcher.py:69] Route: /kv_event_sources, Methods: GET
-(APIServer pid=1618) INFO 10-12 15:41:18 [launcher.py:69] Route: /health, Methods: GET
-(APIServer pid=1618) INFO 10-12 15:41:18 [launcher.py:69] Route: /metrics, Methods: GET
-(APIServer pid=1618) INFO 10-12 15:41:18 [launcher.py:69] Route: /tokenize, Methods: POST
-(APIServer pid=1618) INFO 10-12 15:41:18 [launcher.py:69] Route: /detokenize, Methods: POST
-(APIServer pid=1618) INFO 10-12 15:41:18 [launcher.py:69] Route: /v1/models, Methods: GET
-(APIServer pid=1618) INFO 10-12 15:41:18 [launcher.py:69] Route: /ping, Methods: GET
-(APIServer pid=1618) INFO 10-12 15:41:18 [launcher.py:69] Route: /ping, Methods: POST
-(APIServer pid=1618) INFO 10-12 15:41:18 [launcher.py:69] Route: /invocations, Methods: POST
-(APIServer pid=1618) INFO 10-12 15:41:18 [launcher.py:69] Route: /v1/chat/completions, Methods: POST
-(APIServer pid=1618) INFO 10-12 15:41:18 [launcher.py:69] Route: /v1/chat/completions/batch, Methods: POST
-(APIServer pid=1618) INFO 10-12 15:41:18 [launcher.py:69] Route: /v1/responses, Methods: POST
-(APIServer pid=1618) INFO 10-12 15:41:18 [launcher.py:69] Route: /v1/responses/{response_id}, Methods: GET
-(APIServer pid=1618) INFO 10-12 15:41:18 [launcher.py:69] Route: /v1/responses/{response_id}/cancel, Methods: POST
-(APIServer pid=1618) INFO 10-12 15:41:18 [launcher.py:69] Route: /v1/completions, Methods: POST
-(APIServer pid=1618) INFO 10-12 15:41:18 [launcher.py:69] Route: /v1/messages, Methods: POST
-(APIServer pid=1618) INFO 10-12 15:41:18 [launcher.py:69] Route: /v1/messages/count_tokens, Methods: POST
-(APIServer pid=1618) INFO 10-12 15:41:18 [launcher.py:69] Route: /generative_scoring, Methods: POST
-(APIServer pid=1618) INFO 10-12 15:41:18 [launcher.py:69] Route: /scale_elastic_ep, Methods: POST
-(APIServer pid=1618) INFO 10-12 15:41:18 [launcher.py:69] Route: /is_scaling_elastic_ep, Methods: POST
-INFO:     Started server process [1618]
-INFO:     Waiting for application startup.
-INFO:     Application startup complete.
-INFO:     127.0.0.1:45162 - "GET /v1/models HTTP/1.1" 200 OK
-INFO:     127.0.0.1:34086 - "POST /v1/chat/completions HTTP/1.1" 200 OK
-(APIServer pid=1618) INFO 10-12 15:43:18 [loggers.py:320] Engine 000: Avg prompt throughput: 2053.4 tokens/s, Avg generation throughput: 0.6 tokens/s, Running: 1 reqs, Waiting: 2 reqs, GPU KV cache usage: 14.2%, Prefix cache hit rate: 0.0%, External prefix cache hit rate: 0.0%
-(APIServer pid=1618) INFO 10-12 15:43:18 [metrics.py:103] KV Transfer metrics: lookups=8, hits_vram=0, hits_disk=0, misses=8, errors=0, too_short=0, deposits=0, deposit_bytes=0, loads=0, load_bytes=0, hash_calls=8, hash_tokens_total=156672, saver_queued=0, saver_saved=0, saver_dropped_full=0, saver_skipped_short=0, saver_skipped_known=0, saver_failed=0, saver_bytes=0, saver_chain_saved=0, saver_chain_fallback=0, saver_pending=0, paged_layers=36, uniform=1, hit_rate=0.0
-INFO:     127.0.0.1:34098 - "POST /v1/chat/completions HTTP/1.1" 200 OK
-INFO:     127.0.0.1:34102 - "POST /v1/chat/completions HTTP/1.1" 200 OK
-INFO:     127.0.0.1:34112 - "POST /v1/chat/completions HTTP/1.1" 200 OK
-(APIServer pid=1618) INFO 10-12 15:43:28 [loggers.py:320] Engine 000: Avg prompt throughput: 6160.4 tokens/s, Avg generation throughput: 1.8 tokens/s, Running: 1 reqs, Waiting: 2 reqs, GPU KV cache usage: 14.1%, Prefix cache hit rate: 0.0%, External prefix cache hit rate: 0.0%
-(APIServer pid=1618) INFO 10-12 15:43:28 [metrics.py:103] KV Transfer metrics: lookups=24, hits_vram=0, hits_disk=0, misses=24, errors=0, too_short=0, deposits=3, deposit_bytes=9059696640, loads=0, load_bytes=0, hash_calls=33, hash_tokens_total=654336, saver_queued=3, saver_saved=3, saver_dropped_full=0, saver_skipped_short=0, saver_skipped_known=0, saver_failed=0, saver_bytes=9059696640, saver_chain_saved=0, saver_chain_fallback=0, saver_pending=3, paged_layers=36, uniform=1, hit_rate=0.0
-INFO:     127.0.0.1:42352 - "POST /v1/chat/completions HTTP/1.1" 200 OK
-INFO:     127.0.0.1:36922 - "POST /v1/chat/completions HTTP/1.1" 200 OK
-(APIServer pid=1618) INFO 10-12 15:43:38 [loggers.py:320] Engine 000: Avg prompt throughput: 6160.8 tokens/s, Avg generation throughput: 1.9 tokens/s, Running: 2 reqs, Waiting: 2 reqs, GPU KV cache usage: 14.0%, Prefix cache hit rate: 0.0%, External prefix cache hit rate: 0.0%
-(APIServer pid=1618) INFO 10-12 15:43:38 [metrics.py:103] KV Transfer metrics: lookups=24, hits_vram=0, hits_disk=0, misses=24, errors=3, too_short=0, deposits=0, deposit_bytes=0, loads=0, load_bytes=0, hash_calls=33, hash_tokens_total=654336, saver_queued=3, saver_saved=0, saver_dropped_full=0, saver_skipped_short=0, saver_skipped_known=0, saver_failed=3, saver_bytes=0, saver_chain_saved=0, saver_chain_fallback=0, saver_pending=3, paged_layers=36, uniform=1, hit_rate=0.0
-INFO:     127.0.0.1:36930 - "POST /v1/chat/completions HTTP/1.1" 200 OK
-INFO:     127.0.0.1:36934 - "POST /v1/chat/completions HTTP/1.1" 200 OK
-INFO:     127.0.0.1:47290 - "POST /v1/chat/completions HTTP/1.1" 200 OK
-(APIServer pid=1618) INFO 10-12 15:43:48 [loggers.py:320] Engine 000: Avg prompt throughput: 6161.0 tokens/s, Avg generation throughput: 2.2 tokens/s, Running: 2 reqs, Waiting: 2 reqs, GPU KV cache usage: 13.1%, Prefix cache hit rate: 0.0%, External prefix cache hit rate: 0.0%
-(APIServer pid=1618) INFO 10-12 15:43:48 [metrics.py:103] KV Transfer metrics: lookups=24, hits_vram=0, hits_disk=0, misses=24, errors=3, too_short=0, deposits=0, deposit_bytes=0, loads=0, load_bytes=0, hash_calls=33, hash_tokens_total=654336, saver_queued=3, saver_saved=0, saver_dropped_full=0, saver_skipped_short=0, saver_skipped_known=0, saver_failed=3, saver_bytes=0, saver_chain_saved=0, saver_chain_fallback=0, saver_pending=3, paged_layers=36, uniform=1, hit_rate=0.0
-INFO:     127.0.0.1:47294 - "POST /v1/chat/completions HTTP/1.1" 200 OK
-INFO:     127.0.0.1:47308 - "POST /v1/chat/completions HTTP/1.1" 200 OK
-INFO:     127.0.0.1:38472 - "POST /v1/chat/completions HTTP/1.1" 200 OK
-(APIServer pid=1618) INFO 10-12 15:43:58 [loggers.py:320] Engine 000: Avg prompt throughput: 6160.2 tokens/s, Avg generation throughput: 2.0 tokens/s, Running: 2 reqs, Waiting: 2 reqs, GPU KV cache usage: 12.2%, Prefix cache hit rate: 0.0%, External prefix cache hit rate: 0.0%
-(APIServer pid=1618) INFO 10-12 15:43:58 [metrics.py:103] KV Transfer metrics: lookups=24, hits_vram=0, hits_disk=0, misses=24, errors=3, too_short=0, deposits=0, deposit_bytes=0, loads=0, load_bytes=0, hash_calls=33, hash_tokens_total=654336, saver_queued=3, saver_saved=0, saver_dropped_full=0, saver_skipped_short=0, saver_skipped_known=0, saver_failed=3, saver_bytes=0, saver_chain_saved=0, saver_chain_fallback=0, saver_pending=3, paged_layers=36, uniform=1, hit_rate=0.0
-INFO:     127.0.0.1:38478 - "POST /v1/chat/completions HTTP/1.1" 200 OK
-INFO:     127.0.0.1:38490 - "POST /v1/chat/completions HTTP/1.1" 200 OK
-INFO:     127.0.0.1:60108 - "POST /v1/chat/completions HTTP/1.1" 200 OK
-(APIServer pid=1618) INFO 10-12 15:44:08 [loggers.py:320] Engine 000: Avg prompt throughput: 6160.1 tokens/s, Avg generation throughput: 1.8 tokens/s, Running: 2 reqs, Waiting: 2 reqs, GPU KV cache usage: 10.5%, Prefix cache hit rate: 0.0%, External prefix cache hit rate: 0.0%
-(APIServer pid=1618) INFO 10-12 15:44:08 [metrics.py:103] KV Transfer metrics: lookups=24, hits_vram=0, hits_disk=0, misses=24, errors=2, too_short=0, deposits=0, deposit_bytes=0, loads=0, load_bytes=0, hash_calls=31, hash_tokens_total=613376, saver_queued=3, saver_saved=0, saver_dropped_full=0, saver_skipped_short=0, saver_skipped_known=0, saver_failed=2, saver_bytes=0, saver_chain_saved=0, saver_chain_fallback=0, saver_pending=3, paged_layers=36, uniform=1, hit_rate=0.0
-INFO:     127.0.0.1:60124 - "POST /v1/chat/completions HTTP/1.1" 200 OK
-INFO:     127.0.0.1:60134 - "POST /v1/chat/completions HTTP/1.1" 200 OK
-INFO:     127.0.0.1:59282 - "POST /v1/chat/completions HTTP/1.1" 200 OK
-(APIServer pid=1618) INFO 10-12 15:44:18 [loggers.py:320] Engine 000: Avg prompt throughput: 4107.4 tokens/s, Avg generation throughput: 2.0 tokens/s, Running: 2 reqs, Waiting: 2 reqs, GPU KV cache usage: 8.7%, Prefix cache hit rate: 0.0%, External prefix cache hit rate: 0.0%
-(APIServer pid=1618) INFO 10-12 15:44:18 [metrics.py:103] KV Transfer metrics: lookups=24, hits_vram=0, hits_disk=0, misses=24, errors=3, too_short=0, deposits=0, deposit_bytes=0, loads=0, load_bytes=0, hash_calls=33, hash_tokens_total=654336, saver_queued=3, saver_saved=0, saver_dropped_full=0, saver_skipped_short=0, saver_skipped_known=0, saver_failed=3, saver_bytes=0, saver_chain_saved=0, saver_chain_fallback=0, saver_pending=3, paged_layers=36, uniform=1, hit_rate=0.0
-INFO:     127.0.0.1:59286 - "POST /v1/chat/completions HTTP/1.1" 200 OK
-INFO:     127.0.0.1:59298 - "POST /v1/chat/completions HTTP/1.1" 200 OK
-INFO:     127.0.0.1:35112 - "POST /v1/chat/completions HTTP/1.1" 200 OK
-(APIServer pid=1618) INFO 10-12 15:44:28 [loggers.py:320] Engine 000: Avg prompt throughput: 6161.0 tokens/s, Avg generation throughput: 2.0 tokens/s, Running: 1 reqs, Waiting: 3 reqs, GPU KV cache usage: 7.8%, Prefix cache hit rate: 0.0%, External prefix cache hit rate: 0.0%
-(APIServer pid=1618) INFO 10-12 15:44:28 [metrics.py:103] KV Transfer metrics: lookups=16, hits_vram=0, hits_disk=0, misses=16, errors=3, too_short=0, deposits=0, deposit_bytes=0, loads=0, load_bytes=0, hash_calls=25, hash_tokens_total=497664, saver_queued=3, saver_saved=0, saver_dropped_full=0, saver_skipped_short=0, saver_skipped_known=0, saver_failed=3, saver_bytes=0, saver_chain_saved=0, saver_chain_fallback=0, saver_pending=3, paged_layers=36, uniform=1, hit_rate=0.0
-INFO:     127.0.0.1:35118 - "POST /v1/chat/completions HTTP/1.1" 200 OK
-INFO:     127.0.0.1:53452 - "POST /v1/chat/completions HTTP/1.1" 200 OK
-INFO:     127.0.0.1:53464 - "POST /v1/chat/completions HTTP/1.1" 200 OK
-(APIServer pid=1618) INFO 10-12 15:44:38 [loggers.py:320] Engine 000: Avg prompt throughput: 6161.0 tokens/s, Avg generation throughput: 2.1 tokens/s, Running: 1 reqs, Waiting: 2 reqs, GPU KV cache usage: 15.3%, Prefix cache hit rate: 0.0%, External prefix cache hit rate: 0.0%
-(APIServer pid=1618) INFO 10-12 15:44:38 [metrics.py:103] KV Transfer metrics: lookups=24, hits_vram=0, hits_disk=0, misses=24, errors=3, too_short=0, deposits=0, deposit_bytes=0, loads=0, load_bytes=0, hash_calls=32, hash_tokens_total=633856, saver_queued=2, saver_saved=0, saver_dropped_full=0, saver_skipped_short=0, saver_skipped_known=0, saver_failed=3, saver_bytes=0, saver_chain_saved=0, saver_chain_fallback=0, saver_pending=2, paged_layers=36, uniform=1, hit_rate=0.0
-INFO:     127.0.0.1:53476 - "POST /v1/chat/completions HTTP/1.1" 200 OK
-INFO:     127.0.0.1:43058 - "POST /v1/chat/completions HTTP/1.1" 200 OK
-INFO:     127.0.0.1:43060 - "POST /v1/chat/completions HTTP/1.1" 200 OK
-(APIServer pid=1618) INFO 10-12 15:44:48 [loggers.py:320] Engine 000: Avg prompt throughput: 6160.5 tokens/s, Avg generation throughput: 2.1 tokens/s, Running: 1 reqs, Waiting: 2 reqs, GPU KV cache usage: 15.2%, Prefix cache hit rate: 0.0%, External prefix cache hit rate: 0.0%
-(APIServer pid=1618) INFO 10-12 15:44:48 [metrics.py:103] KV Transfer metrics: lookups=24, hits_vram=0, hits_disk=0, misses=24, errors=3, too_short=0, deposits=0, deposit_bytes=0, loads=0, load_bytes=0, hash_calls=33, hash_tokens_total=654336, saver_queued=3, saver_saved=0, saver_dropped_full=0, saver_skipped_short=0, saver_skipped_known=0, saver_failed=3, saver_bytes=0, saver_chain_saved=0, saver_chain_fallback=0, saver_pending=3, paged_layers=36, uniform=1, hit_rate=0.0
-INFO:     127.0.0.1:43066 - "POST /v1/chat/completions HTTP/1.1" 200 OK
-INFO:     127.0.0.1:57130 - "POST /v1/chat/completions HTTP/1.1" 200 OK
-(APIServer pid=1618) INFO 10-12 15:44:58 [loggers.py:320] Engine 000: Avg prompt throughput: 6160.9 tokens/s, Avg generation throughput: 2.0 tokens/s, Running: 2 reqs, Waiting: 2 reqs, GPU KV cache usage: 13.4%, Prefix cache hit rate: 0.0%, External prefix cache hit rate: 0.0%
-(APIServer pid=1618) INFO 10-12 15:44:58 [metrics.py:103] KV Transfer metrics: lookups=24, hits_vram=0, hits_disk=0, misses=24, errors=3, too_short=0, deposits=0, deposit_bytes=0, loads=0, load_bytes=0, hash_calls=33, hash_tokens_total=654336, saver_queued=3, saver_saved=0, saver_dropped_full=0, saver_skipped_short=0, saver_skipped_known=0, saver_failed=3, saver_bytes=0, saver_chain_saved=0, saver_chain_fallback=0, saver_pending=3, paged_layers=36, uniform=1, hit_rate=0.0
-INFO:     127.0.0.1:57132 - "POST /v1/chat/completions HTTP/1.1" 200 OK
-INFO:     127.0.0.1:57142 - "POST /v1/chat/completions HTTP/1.1" 200 OK
-INFO:     127.0.0.1:45422 - "POST /v1/chat/completions HTTP/1.1" 200 OK
-(APIServer pid=1618) INFO 10-12 15:45:08 [loggers.py:320] Engine 000: Avg prompt throughput: 6160.2 tokens/s, Avg generation throughput: 2.0 tokens/s, Running: 2 reqs, Waiting: 2 reqs, GPU KV cache usage: 12.5%, Prefix cache hit rate: 0.0%, External prefix cache hit rate: 0.0%
-(APIServer pid=1618) INFO 10-12 15:45:08 [metrics.py:103] KV Transfer metrics: lookups=24, hits_vram=0, hits_disk=0, misses=24, errors=3, too_short=0, deposits=0, deposit_bytes=0, loads=0, load_bytes=0, hash_calls=33, hash_tokens_total=654336, saver_queued=3, saver_saved=0, saver_dropped_full=0, saver_skipped_short=0, saver_skipped_known=0, saver_failed=3, saver_bytes=0, saver_chain_saved=0, saver_chain_fallback=0, saver_pending=3, paged_layers=36, uniform=1, hit_rate=0.0
-INFO:     127.0.0.1:45434 - "POST /v1/chat/completions HTTP/1.1" 200 OK
-INFO:     127.0.0.1:45438 - "POST /v1/chat/completions HTTP/1.1" 200 OK
-INFO:     127.0.0.1:59584 - "POST /v1/chat/completions HTTP/1.1" 200 OK
-INFO:     127.0.0.1:59592 - "POST /v1/chat/completions HTTP/1.1" 200 OK
-(APIServer pid=1618) INFO 10-12 15:45:18 [loggers.py:320] Engine 000: Avg prompt throughput: 6166.3 tokens/s, Avg generation throughput: 2.9 tokens/s, Running: 1 reqs, Waiting: 0 reqs, GPU KV cache usage: 8.4%, Prefix cache hit rate: 0.0%, External prefix cache hit rate: 2.7%
-(APIServer pid=1618) INFO 10-12 15:45:18 [metrics.py:103] KV Transfer metrics: lookups=17, hits_vram=0, hits_disk=1, misses=16, errors=4, too_short=0, deposits=0, deposit_bytes=0, loads=1, load_bytes=3019898880, hash_calls=29, hash_tokens_total=579584, saver_queued=4, saver_saved=0, saver_dropped_full=0, saver_skipped_short=0, saver_skipped_known=0, saver_failed=4, saver_bytes=0, saver_chain_saved=0, saver_chain_fallback=0, saver_pending=4, paged_layers=36, uniform=1, hit_rate=5.88
-INFO:     127.0.0.1:49826 - "POST /v1/chat/completions HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49842 - "POST /v1/chat/completions HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49852 - "POST /v1/chat/completions HTTP/1.1" 200 OK
-INFO:     127.0.0.1:44372 - "POST /v1/chat/completions HTTP/1.1" 200 OK
-INFO:     127.0.0.1:44384 - "POST /v1/chat/completions HTTP/1.1" 200 OK
-(APIServer pid=1618) INFO 10-12 15:45:28 [loggers.py:320] Engine 000: Avg prompt throughput: 4118.3 tokens/s, Avg generation throughput: 2.7 tokens/s, Running: 1 reqs, Waiting: 0 reqs, GPU KV cache usage: 5.8%, Prefix cache hit rate: 0.0%, External prefix cache hit rate: 7.1%
-(APIServer pid=1618) INFO 10-12 15:45:28 [metrics.py:103] KV Transfer metrics: lookups=26, hits_vram=0, hits_disk=2, misses=24, errors=2, too_short=0, deposits=0, deposit_bytes=0, loads=2, load_bytes=6039797760, hash_calls=32, hash_tokens_total=633856, saver_queued=2, saver_saved=0, saver_dropped_full=0, saver_skipped_short=0, saver_skipped_known=3, saver_failed=2, saver_bytes=0, saver_chain_saved=0, saver_chain_fallback=0, saver_pending=2, paged_layers=36, uniform=1, hit_rate=7.69
-INFO:     127.0.0.1:44386 - "POST /v1/chat/completions HTTP/1.1" 200 OK
-INFO:     127.0.0.1:44394 - "POST /v1/chat/completions HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56184 - "POST /v1/chat/completions HTTP/1.1" 200 OK
-(APIServer pid=1618) INFO 10-12 15:45:38 [loggers.py:320] Engine 000: Avg prompt throughput: 6161.4 tokens/s, Avg generation throughput: 2.3 tokens/s, Running: 1 reqs, Waiting: 0 reqs, GPU KV cache usage: 5.0%, Prefix cache hit rate: 0.0%, External prefix cache hit rate: 6.6%
-(APIServer pid=1618) INFO 10-12 15:45:38 [metrics.py:103] KV Transfer metrics: lookups=24, hits_vram=0, hits_disk=0, misses=24, errors=3, too_short=0, deposits=0, deposit_bytes=0, loads=0, load_bytes=0, hash_calls=33, hash_tokens_total=654336, saver_queued=3, saver_saved=0, saver_dropped_full=0, saver_skipped_short=0, saver_skipped_known=0, saver_failed=3, saver_bytes=0, saver_chain_saved=0, saver_chain_fallback=0, saver_pending=3, paged_layers=36, uniform=1, hit_rate=0.0
-INFO:     127.0.0.1:56194 - "POST /v1/chat/completions HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56208 - "POST /v1/chat/completions HTTP/1.1" 200 OK
-INFO:     127.0.0.1:35058 - "POST /v1/chat/completions HTTP/1.1" 200 OK
-(APIServer pid=1618) INFO 10-12 15:45:48 [loggers.py:320] Engine 000: Avg prompt throughput: 6160.7 tokens/s, Avg generation throughput: 2.0 tokens/s, Running: 1 reqs, Waiting: 0 reqs, GPU KV cache usage: 4.2%, Prefix cache hit rate: 0.0%, External prefix cache hit rate: 6.2%
-(APIServer pid=1618) INFO 10-12 15:45:48 [metrics.py:103] KV Transfer metrics: lookups=24, hits_vram=0, hits_disk=0, misses=24, errors=3, too_short=0, deposits=0, deposit_bytes=0, loads=0, load_bytes=0, hash_calls=33, hash_tokens_total=654336, saver_queued=3, saver_saved=0, saver_dropped_full=0, saver_skipped_short=0, saver_skipped_known=0, saver_failed=3, saver_bytes=0, saver_chain_saved=0, saver_chain_fallback=0, saver_pending=3, paged_layers=36, uniform=1, hit_rate=0.0
-INFO:     127.0.0.1:35072 - "POST /v1/chat/completions HTTP/1.1" 200 OK
-INFO:     127.0.0.1:33448 - "POST /v1/chat/completions HTTP/1.1" 200 OK
-INFO:     127.0.0.1:33418 - "POST /v1/chat/completions HTTP/1.1" 200 OK
-INFO:     127.0.0.1:33456 - "POST /v1/chat/completions HTTP/1.1" 200 OK
-INFO:     127.0.0.1:33434 - "POST /v1/chat/completions HTTP/1.1" 200 OK
-INFO:     127.0.0.1:33466 - "POST /v1/chat/completions HTTP/1.1" 200 OK
-INFO:     127.0.0.1:33480 - "POST /v1/chat/completions HTTP/1.1" 200 OK
-INFO:     127.0.0.1:33454 - "POST /v1/chat/completions HTTP/1.1" 200 OK
-INFO:     127.0.0.1:33502 - "POST /v1/chat/completions HTTP/1.1" 200 OK
-INFO:     127.0.0.1:33496 - "POST /v1/chat/completions HTTP/1.1" 200 OK
-INFO:     127.0.0.1:33516 - "POST /v1/chat/completions HTTP/1.1" 200 OK
-INFO:     127.0.0.1:33526 - "POST /v1/chat/completions HTTP/1.1" 200 OK
-INFO:     127.0.0.1:33538 - "POST /v1/chat/completions HTTP/1.1" 200 OK
-(APIServer pid=1618) INFO 10-12 15:45:58 [loggers.py:320] Engine 000: Avg prompt throughput: 4766.0 tokens/s, Avg generation throughput: 9.1 tokens/s, Running: 2 reqs, Waiting: 2 reqs, GPU KV cache usage: 10.5%, Prefix cache hit rate: 18.7%, External prefix cache hit rate: 6.1%
-(APIServer pid=1618) INFO 10-12 15:45:58 [metrics.py:103] KV Transfer metrics: lookups=91, hits_vram=0, hits_disk=3, misses=88, errors=9, too_short=0, deposits=0, deposit_bytes=0, loads=3, load_bytes=9059696640, hash_calls=119, hash_tokens_total=2358272, saver_queued=10, saver_saved=0, saver_dropped_full=0, saver_skipped_short=0, saver_skipped_known=3, saver_failed=9, saver_bytes=0, saver_chain_saved=0, saver_chain_fallback=0, saver_pending=9, paged_layers=36, uniform=1, hit_rate=3.3
-INFO:     127.0.0.1:33544 - "POST /v1/chat/completions HTTP/1.1" 200 OK
-INFO:     127.0.0.1:33560 - "POST /v1/chat/completions HTTP/1.1" 200 OK
-INFO:     127.0.0.1:33572 - "POST /v1/chat/completions HTTP/1.1" 200 OK
-(APIServer pid=1618) INFO 10-12 15:46:08 [loggers.py:320] Engine 000: Avg prompt throughput: 4106.9 tokens/s, Avg generation throughput: 1.8 tokens/s, Running: 2 reqs, Waiting: 2 reqs, GPU KV cache usage: 8.8%, Prefix cache hit rate: 17.8%, External prefix cache hit rate: 5.8%
-(APIServer pid=1618) INFO 10-12 15:46:08 [metrics.py:103] KV Transfer metrics: lookups=24, hits_vram=0, hits_disk=0, misses=24, errors=3, too_short=0, deposits=0, deposit_bytes=0, loads=0, load_bytes=0, hash_calls=33, hash_tokens_total=654336, saver_queued=3, saver_saved=0, saver_dropped_full=0, saver_skipped_short=0, saver_skipped_known=0, saver_failed=3, saver_bytes=0, saver_chain_saved=0, saver_chain_fallback=0, saver_pending=3, paged_layers=36, uniform=1, hit_rate=0.0
-INFO:     127.0.0.1:33584 - "POST /v1/chat/completions HTTP/1.1" 200 OK
-INFO:     127.0.0.1:33586 - "POST /v1/chat/completions HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56490 - "POST /v1/chat/completions HTTP/1.1" 200 OK
-(APIServer pid=1618) INFO 10-12 15:46:18 [loggers.py:320] Engine 000: Avg prompt throughput: 6161.1 tokens/s, Avg generation throughput: 2.2 tokens/s, Running: 1 reqs, Waiting: 3 reqs, GPU KV cache usage: 7.9%, Prefix cache hit rate: 17.3%, External prefix cache hit rate: 5.6%
-(APIServer pid=1618) INFO 10-12 15:46:18 [metrics.py:103] KV Transfer metrics: lookups=16, hits_vram=0, hits_disk=0, misses=16, errors=3, too_short=0, deposits=0, deposit_bytes=0, loads=0, load_bytes=0, hash_calls=25, hash_tokens_total=497664, saver_queued=3, saver_saved=0, saver_dropped_full=0, saver_skipped_short=0, saver_skipped_known=0, saver_failed=3, saver_bytes=0, saver_chain_saved=0, saver_chain_fallback=0, saver_pending=3, paged_layers=36, uniform=1, hit_rate=0.0
-INFO:     127.0.0.1:56496 - "POST /v1/chat/completions HTTP/1.1" 200 OK
-INFO:     127.0.0.1:51192 - "POST /v1/chat/completions HTTP/1.1" 200 OK
-INFO:     127.0.0.1:51202 - "POST /v1/chat/completions HTTP/1.1" 200 OK
-(APIServer pid=1618) INFO 10-12 15:46:28 [loggers.py:320] Engine 000: Avg prompt throughput: 6160.9 tokens/s, Avg generation throughput: 2.0 tokens/s, Running: 1 reqs, Waiting: 3 reqs, GPU KV cache usage: 7.0%, Prefix cache hit rate: 16.6%, External prefix cache hit rate: 5.3%
-(APIServer pid=1618) INFO 10-12 15:46:28 [metrics.py:103] KV Transfer metrics: lookups=24, hits_vram=0, hits_disk=0, misses=24, errors=3, too_short=0, deposits=0, deposit_bytes=0, loads=0, load_bytes=0, hash_calls=33, hash_tokens_total=654336, saver_queued=3, saver_saved=0, saver_dropped_full=0, saver_skipped_short=0, saver_skipped_known=0, saver_failed=3, saver_bytes=0, saver_chain_saved=0, saver_chain_fallback=0, saver_pending=3, paged_layers=36, uniform=1, hit_rate=0.0
-INFO:     127.0.0.1:51214 - "POST /v1/chat/completions HTTP/1.1" 200 OK
-INFO:     127.0.0.1:54028 - "POST /v1/chat/completions HTTP/1.1" 200 OK
-(APIServer pid=1618) INFO 10-12 15:46:38 [loggers.py:320] Engine 000: Avg prompt throughput: 6160.7 tokens/s, Avg generation throughput: 2.0 tokens/s, Running: 2 reqs, Waiting: 2 reqs, GPU KV cache usage: 14.4%, Prefix cache hit rate: 15.9%, External prefix cache hit rate: 5.0%
-(APIServer pid=1618) INFO 10-12 15:46:38 [metrics.py:103] KV Transfer metrics: lookups=24, hits_vram=0, hits_disk=0, misses=24, errors=3, too_short=0, deposits=0, deposit_bytes=0, loads=0, load_bytes=0, hash_calls=32, hash_tokens_total=633856, saver_queued=2, saver_saved=0, saver_dropped_full=0, saver_skipped_short=0, saver_skipped_known=0, saver_failed=3, saver_bytes=0, saver_chain_saved=0, saver_chain_fallback=0, saver_pending=2, paged_layers=36, uniform=1, hit_rate=0.0
-INFO:     127.0.0.1:54038 - "POST /v1/chat/completions HTTP/1.1" 200 OK
-INFO:     127.0.0.1:54046 - "POST /v1/chat/completions HTTP/1.1" 200 OK
-INFO:     127.0.0.1:51888 - "POST /v1/chat/completions HTTP/1.1" 200 OK
-(APIServer pid=1618) INFO 10-12 15:46:48 [loggers.py:320] Engine 000: Avg prompt throughput: 6161.4 tokens/s, Avg generation throughput: 1.9 tokens/s, Running: 2 reqs, Waiting: 2 reqs, GPU KV cache usage: 12.7%, Prefix cache hit rate: 15.2%, External prefix cache hit rate: 4.8%
-(APIServer pid=1618) INFO 10-12 15:46:48 [metrics.py:103] KV Transfer metrics: lookups=24, hits_vram=0, hits_disk=0, misses=24, errors=3, too_short=0, deposits=0, deposit_bytes=0, loads=0, load_bytes=0, hash_calls=33, hash_tokens_total=654336, saver_queued=3, saver_saved=0, saver_dropped_full=0, saver_skipped_short=0, saver_skipped_known=0, saver_failed=3, saver_bytes=0, saver_chain_saved=0, saver_chain_fallback=0, saver_pending=3, paged_layers=36, uniform=1, hit_rate=0.0
-INFO:     127.0.0.1:51898 - "POST /v1/chat/completions HTTP/1.1" 200 OK
-INFO:     127.0.0.1:51914 - "POST /v1/chat/completions HTTP/1.1" 200 OK
-INFO:     127.0.0.1:38294 - "POST /v1/chat/completions HTTP/1.1" 200 OK
-(APIServer pid=1618) INFO 10-12 15:46:58 [loggers.py:320] Engine 000: Avg prompt throughput: 6160.7 tokens/s, Avg generation throughput: 2.1 tokens/s, Running: 2 reqs, Waiting: 2 reqs, GPU KV cache usage: 11.7%, Prefix cache hit rate: 14.7%, External prefix cache hit rate: 4.6%
-(APIServer pid=1618) INFO 10-12 15:46:58 [metrics.py:103] KV Transfer metrics: lookups=24, hits_vram=0, hits_disk=0, misses=24, errors=3, too_short=0, deposits=0, deposit_bytes=0, loads=0, load_bytes=0, hash_calls=33, hash_tokens_total=654336, saver_queued=3, saver_saved=0, saver_dropped_full=0, saver_skipped_short=0, saver_skipped_known=0, saver_failed=3, saver_bytes=0, saver_chain_saved=0, saver_chain_fallback=0, saver_pending=3, paged_layers=36, uniform=1, hit_rate=0.0
-INFO:     127.0.0.1:38302 - "POST /v1/chat/completions HTTP/1.1" 200 OK
-INFO:     127.0.0.1:38316 - "POST /v1/chat/completions HTTP/1.1" 200 OK
-INFO:     127.0.0.1:53604 - "POST /v1/chat/completions HTTP/1.1" 200 OK
-(APIServer pid=1618) INFO 10-12 15:47:08 [loggers.py:320] Engine 000: Avg prompt throughput: 6144.7 tokens/s, Avg generation throughput: 1.9 tokens/s, Running: 2 reqs, Waiting: 2 reqs, GPU KV cache usage: 10.0%, Prefix cache hit rate: 14.1%, External prefix cache hit rate: 4.4%
-(APIServer pid=1618) INFO 10-12 15:47:08 [metrics.py:103] KV Transfer metrics: lookups=24, hits_vram=0, hits_disk=0, misses=24, errors=2, too_short=0, deposits=0, deposit_bytes=0, loads=0, load_bytes=0, hash_calls=31, hash_tokens_total=613376, saver_queued=3, saver_saved=0, saver_dropped_full=0, saver_skipped_short=0, saver_skipped_known=0, saver_failed=2, saver_bytes=0, saver_chain_saved=0, saver_chain_fallback=0, saver_pending=3, paged_layers=36, uniform=1, hit_rate=0.0
-INFO:     127.0.0.1:53618 - "POST /v1/chat/completions HTTP/1.1" 200 OK
-INFO:     127.0.0.1:53624 - "POST /v1/chat/completions HTTP/1.1" 200 OK
-INFO:     127.0.0.1:51690 - "POST /v1/chat/completions HTTP/1.1" 200 OK
-(APIServer pid=1618) INFO 10-12 15:47:18 [loggers.py:320] Engine 000: Avg prompt throughput: 4107.1 tokens/s, Avg generation throughput: 2.1 tokens/s, Running: 1 reqs, Waiting: 0 reqs, GPU KV cache usage: 15.8%, Prefix cache hit rate: 13.8%, External prefix cache hit rate: 4.3%
-(APIServer pid=1618) INFO 10-12 15:47:18 [metrics.py:103] KV Transfer metrics: lookups=16, hits_vram=0, hits_disk=0, misses=16, errors=3, too_short=0, deposits=0, deposit_bytes=0, loads=0, load_bytes=0, hash_calls=24, hash_tokens_total=477184, saver_queued=2, saver_saved=0, saver_dropped_full=0, saver_skipped_short=0, saver_skipped_known=0, saver_failed=3, saver_bytes=0, saver_chain_saved=0, saver_chain_fallback=0, saver_pending=2, paged_layers=36, uniform=1, hit_rate=0.0
-INFO:     127.0.0.1:51692 - "POST /v1/chat/completions HTTP/1.1" 200 OK
-INFO:     127.0.0.1:46648 - "POST /v1/chat/completions HTTP/1.1" 200 OK
-INFO:     127.0.0.1:46650 - "POST /v1/chat/completions HTTP/1.1" 200 OK
-INFO:     127.0.0.1:46660 - "POST /v1/chat/completions HTTP/1.1" 200 OK
-INFO:     127.0.0.1:33178 - "POST /v1/chat/completions HTTP/1.1" 200 OK
-INFO:     127.0.0.1:33180 - "POST /v1/chat/completions HTTP/1.1" 200 OK
-(APIServer pid=1618) INFO 10-12 15:47:28 [loggers.py:320] Engine 000: Avg prompt throughput: 6177.5 tokens/s, Avg generation throughput: 3.8 tokens/s, Running: 1 reqs, Waiting: 0 reqs, GPU KV cache usage: 4.2%, Prefix cache hit rate: 12.9%, External prefix cache hit rate: 7.7%
-(APIServer pid=1618) INFO 10-12 15:47:28 [metrics.py:103] KV Transfer metrics: lookups=27, hits_vram=0, hits_disk=3, misses=24, errors=4, too_short=0, deposits=0, deposit_bytes=0, loads=3, load_bytes=9059696640, hash_calls=39, hash_tokens_total=777216, saver_queued=4, saver_saved=0, saver_dropped_full=0, saver_skipped_short=0, saver_skipped_known=3, saver_failed=4, saver_bytes=0, saver_chain_saved=0, saver_chain_fallback=0, saver_pending=4, paged_layers=36, uniform=1, hit_rate=11.11
-INFO:     127.0.0.1:33188 - "POST /v1/chat/completions HTTP/1.1" 200 OK
-INFO:     127.0.0.1:50530 - "POST /v1/chat/completions HTTP/1.1" 200 OK
-INFO:     127.0.0.1:50544 - "POST /v1/chat/completions HTTP/1.1" 200 OK
-(APIServer pid=1618) INFO 10-12 15:47:38 [loggers.py:320] Engine 000: Avg prompt throughput: 6160.9 tokens/s, Avg generation throughput: 2.3 tokens/s, Running: 1 reqs, Waiting: 0 reqs, GPU KV cache usage: 2.5%, Prefix cache hit rate: 12.5%, External prefix cache hit rate: 7.5%
-(APIServer pid=1618) INFO 10-12 15:47:38 [metrics.py:103] KV Transfer metrics: lookups=24, hits_vram=0, hits_disk=0, misses=24, errors=3, too_short=0, deposits=0, deposit_bytes=0, loads=0, load_bytes=0, hash_calls=33, hash_tokens_total=654336, saver_queued=3, saver_saved=0, saver_dropped_full=0, saver_skipped_short=0, saver_skipped_known=0, saver_failed=3, saver_bytes=0, saver_chain_saved=0, saver_chain_fallback=0, saver_pending=3, paged_layers=36, uniform=1, hit_rate=0.0
-INFO:     127.0.0.1:50556 - "POST /v1/chat/completions HTTP/1.1" 200 OK
-INFO:     127.0.0.1:36368 - "POST /v1/chat/completions HTTP/1.1" 200 OK
-INFO:     127.0.0.1:36384 - "POST /v1/chat/completions HTTP/1.1" 200 OK
-(APIServer pid=1618) INFO 10-12 15:47:48 [loggers.py:320] Engine 000: Avg prompt throughput: 6160.6 tokens/s, Avg generation throughput: 2.0 tokens/s, Running: 1 reqs, Waiting: 0 reqs, GPU KV cache usage: 1.7%, Prefix cache hit rate: 12.1%, External prefix cache hit rate: 7.2%
-(APIServer pid=1618) INFO 10-12 15:47:48 [metrics.py:103] KV Transfer metrics: lookups=24, hits_vram=0, hits_disk=0, misses=24, errors=3, too_short=0, deposits=0, deposit_bytes=0, loads=0, load_bytes=0, hash_calls=33, hash_tokens_total=654336, saver_queued=3, saver_saved=0, saver_dropped_full=0, saver_skipped_short=0, saver_skipped_known=0, saver_failed=3, saver_bytes=0, saver_chain_saved=0, saver_chain_fallback=0, saver_pending=3, paged_layers=36, uniform=1, hit_rate=0.0
-INFO:     127.0.0.1:36392 - "POST /v1/chat/completions HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49322 - "POST /v1/chat/completions HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49302 - "POST /v1/chat/completions HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49334 - "POST /v1/chat/completions HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49308 - "POST /v1/chat/completions HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49344 - "POST /v1/chat/completions HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49358 - "POST /v1/chat/completions HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49330 - "POST /v1/chat/completions HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49374 - "POST /v1/chat/completions HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49364 - "POST /v1/chat/completions HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49380 - "POST /v1/chat/completions HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49384 - "POST /v1/chat/completions HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49398 - "POST /v1/chat/completions HTTP/1.1" 200 OK
-(APIServer pid=1618) INFO 10-12 15:47:58 [loggers.py:320] Engine 000: Avg prompt throughput: 2714.2 tokens/s, Avg generation throughput: 8.9 tokens/s, Running: 1 reqs, Waiting: 2 reqs, GPU KV cache usage: 15.6%, Prefix cache hit rate: 21.3%, External prefix cache hit rate: 7.2%
-(APIServer pid=1618) INFO 10-12 15:47:58 [metrics.py:103] KV Transfer metrics: lookups=83, hits_vram=0, hits_disk=3, misses=80, errors=9, too_short=0, deposits=0, deposit_bytes=0, loads=3, load_bytes=9059696640, hash_calls=110, hash_tokens_total=2181120, saver_queued=9, saver_saved=0, saver_dropped_full=0, saver_skipped_short=0, saver_skipped_known=3, saver_failed=9, saver_bytes=0, saver_chain_saved=0, saver_chain_fallback=0, saver_pending=8, paged_layers=36, uniform=1, hit_rate=3.61
-INFO:     127.0.0.1:49408 - "POST /v1/chat/completions HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49420 - "POST /v1/chat/completions HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49430 - "POST /v1/chat/completions HTTP/1.1" 200 OK
-(APIServer pid=1618) INFO 10-12 15:48:08 [loggers.py:320] Engine 000: Avg prompt throughput: 6161.1 tokens/s, Avg generation throughput: 2.0 tokens/s, Running: 1 reqs, Waiting: 2 reqs, GPU KV cache usage: 15.5%, Prefix cache hit rate: 20.7%, External prefix cache hit rate: 6.9%
-(APIServer pid=1618) INFO 10-12 15:48:08 [metrics.py:103] KV Transfer metrics: lookups=24, hits_vram=0, hits_disk=0, misses=24, errors=3, too_short=0, deposits=0, deposit_bytes=0, loads=0, load_bytes=0, hash_calls=33, hash_tokens_total=654336, saver_queued=3, saver_saved=0, saver_dropped_full=0, saver_skipped_short=0, saver_skipped_known=0, saver_failed=3, saver_bytes=0, saver_chain_saved=0, saver_chain_fallback=0, saver_pending=3, paged_layers=36, uniform=1, hit_rate=0.0
-INFO:     127.0.0.1:49434 - "POST /v1/chat/completions HTTP/1.1" 200 OK
-INFO:     127.0.0.1:40340 - "POST /v1/chat/completions HTTP/1.1" 200 OK
-INFO:     127.0.0.1:40346 - "POST /v1/chat/completions HTTP/1.1" 200 OK
-(APIServer pid=1618) INFO 10-12 15:48:18 [loggers.py:320] Engine 000: Avg prompt throughput: 6160.7 tokens/s, Avg generation throughput: 2.2 tokens/s, Running: 1 reqs, Waiting: 2 reqs, GPU KV cache usage: 14.6%, Prefix cache hit rate: 20.2%, External prefix cache hit rate: 6.7%
-(APIServer pid=1618) INFO 10-12 15:48:18 [metrics.py:103] KV Transfer metrics: lookups=24, hits_vram=0, hits_disk=0, misses=24, errors=3, too_short=0, deposits=0, deposit_bytes=0, loads=0, load_bytes=0, hash_calls=33, hash_tokens_total=654336, saver_queued=3, saver_saved=0, saver_dropped_full=0, saver_skipped_short=0, saver_skipped_known=0, saver_failed=3, saver_bytes=0, saver_chain_saved=0, saver_chain_fallback=0, saver_pending=3, paged_layers=36, uniform=1, hit_rate=0.0
-INFO:     127.0.0.1:40352 - "POST /v1/chat/completions HTTP/1.1" 200 OK
-INFO:     127.0.0.1:47590 - "POST /v1/chat/completions HTTP/1.1" 200 OK
-(APIServer pid=1618) INFO 10-12 15:48:28 [loggers.py:320] Engine 000: Avg prompt throughput: 6160.8 tokens/s, Avg generation throughput: 1.9 tokens/s, Running: 2 reqs, Waiting: 2 reqs, GPU KV cache usage: 12.8%, Prefix cache hit rate: 19.6%, External prefix cache hit rate: 6.5%
-(APIServer pid=1618) INFO 10-12 15:48:28 [metrics.py:103] KV Transfer metrics: lookups=24, hits_vram=0, hits_disk=0, misses=24, errors=3, too_short=0, deposits=0, deposit_bytes=0, loads=0, load_bytes=0, hash_calls=33, hash_tokens_total=654336, saver_queued=3, saver_saved=0, saver_dropped_full=0, saver_skipped_short=0, saver_skipped_known=0, saver_failed=3, saver_bytes=0, saver_chain_saved=0, saver_chain_fallback=0, saver_pending=3, paged_layers=36, uniform=1, hit_rate=0.0
-INFO:     127.0.0.1:47598 - "POST /v1/chat/completions HTTP/1.1" 200 OK
-INFO:     127.0.0.1:47606 - "POST /v1/chat/completions HTTP/1.1" 200 OK
-INFO:     127.0.0.1:57194 - "POST /v1/chat/completions HTTP/1.1" 200 OK
-(APIServer pid=1618) INFO 10-12 15:48:38 [loggers.py:320] Engine 000: Avg prompt throughput: 6160.3 tokens/s, Avg generation throughput: 1.8 tokens/s, Running: 2 reqs, Waiting: 2 reqs, GPU KV cache usage: 11.9%, Prefix cache hit rate: 19.2%, External prefix cache hit rate: 6.3%
-(APIServer pid=1618) INFO 10-12 15:48:38 [metrics.py:103] KV Transfer metrics: lookups=24, hits_vram=0, hits_disk=0, misses=24, errors=3, too_short=0, deposits=0, deposit_bytes=0, loads=0, load_bytes=0, hash_calls=33, hash_tokens_total=654336, saver_queued=3, saver_saved=0, saver_dropped_full=0, saver_skipped_short=0, saver_skipped_known=0, saver_failed=3, saver_bytes=0, saver_chain_saved=0, saver_chain_fallback=0, saver_pending=3, paged_layers=36, uniform=1, hit_rate=0.0
-INFO:     127.0.0.1:57210 - "POST /v1/chat/completions HTTP/1.1" 200 OK
-INFO:     127.0.0.1:57218 - "POST /v1/chat/completions HTTP/1.1" 200 OK
-INFO:     127.0.0.1:39902 - "POST /v1/chat/completions HTTP/1.1" 200 OK
-(APIServer pid=1618) INFO 10-12 15:48:48 [loggers.py:320] Engine 000: Avg prompt throughput: 6160.7 tokens/s, Avg generation throughput: 1.9 tokens/s, Running: 2 reqs, Waiting: 2 reqs, GPU KV cache usage: 10.2%, Prefix cache hit rate: 18.7%, External prefix cache hit rate: 6.1%
-(APIServer pid=1618) INFO 10-12 15:48:48 [metrics.py:103] KV Transfer metrics: lookups=24, hits_vram=0, hits_disk=0, misses=24, errors=3, too_short=0, deposits=0, deposit_bytes=0, loads=0, load_bytes=0, hash_calls=33, hash_tokens_total=654336, saver_queued=3, saver_saved=0, saver_dropped_full=0, saver_skipped_short=0, saver_skipped_known=0, saver_failed=3, saver_bytes=0, saver_chain_saved=0, saver_chain_fallback=0, saver_pending=3, paged_layers=36, uniform=1, hit_rate=0.0
-INFO:     127.0.0.1:39914 - "POST /v1/chat/completions HTTP/1.1" 200 OK
-INFO:     127.0.0.1:39918 - "POST /v1/chat/completions HTTP/1.1" 200 OK
-INFO:     127.0.0.1:34172 - "POST /v1/chat/completions HTTP/1.1" 200 OK
-(APIServer pid=1618) INFO 10-12 15:48:58 [loggers.py:320] Engine 000: Avg prompt throughput: 4107.3 tokens/s, Avg generation throughput: 2.0 tokens/s, Running: 2 reqs, Waiting: 2 reqs, GPU KV cache usage: 8.4%, Prefix cache hit rate: 18.2%, External prefix cache hit rate: 5.9%
-(APIServer pid=1618) INFO 10-12 15:48:58 [metrics.py:103] KV Transfer metrics: lookups=24, hits_vram=0, hits_disk=0, misses=24, errors=2, too_short=0, deposits=0, deposit_bytes=0, loads=0, load_bytes=0, hash_calls=31, hash_tokens_total=613376, saver_queued=3, saver_saved=0, saver_dropped_full=0, saver_skipped_short=0, saver_skipped_known=0, saver_failed=2, saver_bytes=0, saver_chain_saved=0, saver_chain_fallback=0, saver_pending=3, paged_layers=36, uniform=1, hit_rate=0.0
-INFO:     127.0.0.1:34174 - "POST /v1/chat/completions HTTP/1.1" 200 OK
-INFO:     127.0.0.1:34180 - "POST /v1/chat/completions HTTP/1.1" 200 OK
-INFO:     127.0.0.1:57858 - "POST /v1/chat/completions HTTP/1.1" 200 OK
-(APIServer pid=1618) INFO 10-12 15:49:08 [loggers.py:320] Engine 000: Avg prompt throughput: 6160.4 tokens/s, Avg generation throughput: 2.2 tokens/s, Running: 1 reqs, Waiting: 2 reqs, GPU KV cache usage: 15.9%, Prefix cache hit rate: 18.0%, External prefix cache hit rate: 5.8%
-(APIServer pid=1618) INFO 10-12 15:49:08 [metrics.py:103] KV Transfer metrics: lookups=16, hits_vram=0, hits_disk=0, misses=16, errors=3, too_short=0, deposits=0, deposit_bytes=0, loads=0, load_bytes=0, hash_calls=24, hash_tokens_total=477184, saver_queued=2, saver_saved=0, saver_dropped_full=0, saver_skipped_short=0, saver_skipped_known=0, saver_failed=3, saver_bytes=0, saver_chain_saved=0, saver_chain_fallback=0, saver_pending=2, paged_layers=36, uniform=1, hit_rate=0.0
-INFO:     127.0.0.1:57874 - "POST /v1/chat/completions HTTP/1.1" 200 OK
-INFO:     127.0.0.1:57884 - "POST /v1/chat/completions HTTP/1.1" 200 OK
-(APIServer pid=1618) INFO 10-12 15:49:18 [loggers.py:320] Engine 000: Avg prompt throughput: 6160.6 tokens/s, Avg generation throughput: 2.1 tokens/s, Running: 2 reqs, Waiting: 0 reqs, GPU KV cache usage: 15.0%, Prefix cache hit rate: 17.6%, External prefix cache hit rate: 5.7%
-(APIServer pid=1618) INFO 10-12 15:49:18 [metrics.py:103] KV Transfer metrics: lookups=24, hits_vram=0, hits_disk=0, misses=24, errors=3, too_short=0, deposits=0, deposit_bytes=0, loads=0, load_bytes=0, hash_calls=33, hash_tokens_total=654336, saver_queued=3, saver_saved=0, saver_dropped_full=0, saver_skipped_short=0, saver_skipped_known=0, saver_failed=3, saver_bytes=0, saver_chain_saved=0, saver_chain_fallback=0, saver_pending=3, paged_layers=36, uniform=1, hit_rate=0.0
-INFO:     127.0.0.1:38506 - "POST /v1/chat/completions HTTP/1.1" 200 OK
-INFO:     127.0.0.1:38520 - "POST /v1/chat/completions HTTP/1.1" 200 OK
-INFO:     127.0.0.1:34792 - "POST /v1/chat/completions HTTP/1.1" 200 OK
-INFO:     127.0.0.1:34808 - "POST /v1/chat/completions HTTP/1.1" 200 OK
-INFO:     127.0.0.1:44774 - "POST /v1/chat/completions HTTP/1.1" 200 OK
-INFO:     127.0.0.1:44776 - "POST /v1/chat/completions HTTP/1.1" 200 OK
-INFO:     127.0.0.1:44782 - "POST /v1/chat/completions HTTP/1.1" 200 OK
-(APIServer pid=1618) INFO 10-12 15:49:28 [loggers.py:320] Engine 000: Avg prompt throughput: 6177.0 tokens/s, Avg generation throughput: 3.9 tokens/s, Running: 0 reqs, Waiting: 0 reqs, GPU KV cache usage: 0.0%, Prefix cache hit rate: 16.9%, External prefix cache hit rate: 8.0%
-(APIServer pid=1618) INFO 10-12 15:49:28 [metrics.py:103] KV Transfer metrics: lookups=19, hits_vram=0, hits_disk=3, misses=16, errors=3, too_short=0, deposits=0, deposit_bytes=0, loads=3, load_bytes=9059696640, hash_calls=29, hash_tokens_total=579584, saver_queued=4, saver_saved=0, saver_dropped_full=0, saver_skipped_short=0, saver_skipped_known=3, saver_failed=3, saver_bytes=0, saver_chain_saved=0, saver_chain_fallback=0, saver_pending=4, paged_layers=36, uniform=1, hit_rate=15.79
-INFO:     127.0.0.1:44796 - "POST /v1/chat/completions HTTP/1.1" 200 OK
-INFO:     127.0.0.1:34858 - "POST /v1/chat/completions HTTP/1.1" 200 OK
-(APIServer pid=1618) INFO 10-12 15:49:38 [loggers.py:320] Engine 000: Avg prompt throughput: 4107.2 tokens/s, Avg generation throughput: 1.4 tokens/s, Running: 1 reqs, Waiting: 0 reqs, GPU KV cache usage: 8.3%, Prefix cache hit rate: 16.6%, External prefix cache hit rate: 7.8%
-(APIServer pid=1618) INFO 10-12 15:49:38 [metrics.py:103] KV Transfer metrics: lookups=24, hits_vram=0, hits_disk=0, misses=24, errors=3, too_short=0, deposits=0, deposit_bytes=0, loads=0, load_bytes=0, hash_calls=32, hash_tokens_total=633856, saver_queued=2, saver_saved=0, saver_dropped_full=0, saver_skipped_short=0, saver_skipped_known=0, saver_failed=3, saver_bytes=0, saver_chain_saved=0, saver_chain_fallback=0, saver_pending=2, paged_layers=36, uniform=1, hit_rate=0.0
-INFO:     127.0.0.1:34864 - "POST /v1/chat/completions HTTP/1.1" 200 OK
-INFO:     127.0.0.1:34878 - "POST /v1/chat/completions HTTP/1.1" 200 OK
-INFO:     127.0.0.1:58452 - "POST /v1/chat/completions HTTP/1.1" 200 OK
-(APIServer pid=1618) INFO 10-12 15:49:48 [loggers.py:320] Engine 000: Avg prompt throughput: 6161.3 tokens/s, Avg generation throughput: 2.3 tokens/s, Running: 1 reqs, Waiting: 0 reqs, GPU KV cache usage: 7.5%, Prefix cache hit rate: 16.2%, External prefix cache hit rate: 7.6%
-(APIServer pid=1618) INFO 10-12 15:49:48 [metrics.py:103] KV Transfer metrics: lookups=24, hits_vram=0, hits_disk=0, misses=24, errors=3, too_short=0, deposits=0, deposit_bytes=0, loads=0, load_bytes=0, hash_calls=33, hash_tokens_total=654336, saver_queued=3, saver_saved=0, saver_dropped_full=0, saver_skipped_short=0, saver_skipped_known=0, saver_failed=3, saver_bytes=0, saver_chain_saved=0, saver_chain_fallback=0, saver_pending=3, paged_layers=36, uniform=1, hit_rate=0.0
-INFO:     127.0.0.1:58466 - "POST /v1/chat/completions HTTP/1.1" 200 OK
-INFO:     127.0.0.1:58476 - "POST /v1/chat/completions HTTP/1.1" 200 OK
-(APIServer pid=1618) INFO 10-12 15:49:58 [loggers.py:320] Engine 000: Avg prompt throughput: 4107.0 tokens/s, Avg generation throughput: 1.4 tokens/s, Running: 0 reqs, Waiting: 0 reqs, GPU KV cache usage: 0.0%, Prefix cache hit rate: 16.1%, External prefix cache hit rate: 7.6%
-(APIServer pid=1618) INFO 10-12 15:49:58 [metrics.py:103] KV Transfer metrics: lookups=8, hits_vram=0, hits_disk=0, misses=8, errors=1, too_short=0, deposits=0, deposit_bytes=0, loads=0, load_bytes=0, hash_calls=12, hash_tokens_total=238592, saver_queued=2, saver_saved=0, saver_dropped_full=0, saver_skipped_short=0, saver_skipped_known=0, saver_failed=1, saver_bytes=0, saver_chain_saved=0, saver_chain_fallback=0, saver_pending=2, paged_layers=36, uniform=1, hit_rate=0.0
-(APIServer pid=1618) INFO 10-12 15:50:08 [loggers.py:320] Engine 000: Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 0.0 tokens/s, Running: 0 reqs, Waiting: 0 reqs, GPU KV cache usage: 0.0%, Prefix cache hit rate: 16.1%, External prefix cache hit rate: 7.6%
