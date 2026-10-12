@@ -89,7 +89,21 @@ Same fill/revisit/3-run methodology as baseline.
 
 Galahad's disk cache holds the KV cache for prompts vLLM would otherwise have evicted, so revisits are served from disk instead of fully recomputed — **3.6x faster than baseline** on this working set, with no correctness cost. The disk budget needs to be sized to the actual working set (36 prompts × ~20.5k tokens × ~144 KB/token ≈ 2.9 GB per prompt) — a budget that's too small for the prompt sizes in play limits how many prompts can be cached. See `charts/galahad_revisit_times.png` and `results/results_galahad_B_30GB.json` for the full per-prompt breakdown.
 
-## 6. Reproducing this
+## 6. GPU utilization and power
+
+Logged `nvidia-smi` at 1-second intervals for the full duration of each benchmark (fill + all 3 revisit runs), on a separate pair of runs under identical conditions to isolate this measurement.
+
+| | Baseline (A) | Galahad (B) |
+|---|---|---|
+| Total energy consumed | 34.81 Wh | 28.03 Wh (**19.5% less**) |
+| Avg power draw | 280.8 W | 263.3 W (6.2% lower) |
+| Peak power draw | 303.8 W | 304.6 W |
+| Avg GPU utilization | 89.7% | 85.1% (5.0% lower) |
+| Session duration | 446.2s | 383.2s |
+
+Galahad serves cached revisits from disk instead of recomputing the full forward pass, so the GPU does measurably less work per revisit — lower average utilization and power draw, and the whole job finishes faster, so total energy for the same benchmark drops by about a fifth. Raw per-second logs: `results/gpu_baseline.csv`, `results/gpu_galahad.csv`.
+
+## 7. Reproducing this
 
 ```bash
 git clone https://github.com/i-redspector/galahad-benchmark-results
