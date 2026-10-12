@@ -2,7 +2,7 @@
 
 | | |
 |---|---|
-| **Tester** | Abdullah Zulfiqar ([@redspector](https://www.freelancer.com/u/redspector) on Freelancer.com) |
+| **Tester** | Abdullah Zulfiqar ([@i-redspector](https://github.com/i-redspector) on GitHub) |
 | **Hardware** | NVIDIA A40 (46 GB VRAM), 96 vCPU, 503 GB RAM, local NVMe-backed overlay disk (RunPod, on-demand pod) |
 | **Model** | Qwen3-4B-AWQ (4-bit AWQ, served via vLLM's OpenAI-compatible API) — chosen as "a comparable LLM" per the brief, sized to fit comfortably alongside the full working set required by the test |
 | **vLLM** | 0.31.0 |
